@@ -4,6 +4,7 @@ import Header from '@/components/headerComponents/Header';
 import { LayoutGroup, motion } from "framer-motion";
 import { Button, Input, Popover, PopoverContent, PopoverTrigger, Select, SelectItem } from '@heroui/react';
 import { Slider } from "@heroui/react";
+import Buy from './buy';
 
 type SliderComponentProps = {
   value: number[];
@@ -51,15 +52,14 @@ const SliderComponent: React.FC<SliderComponentProps> = ({ value, setValue }) =>
 };
 
 export default function WatchLanding() {
-  const [activeTab, setActiveTab] = useState("Buy");
-  const inputWrapperStyle = "!border-1 !border-[#F0F0F0] focus-within:border-theme-color rounded-md";
+  const [activeTab, setActiveTab] = useState<string>("Buy");
   const [value, setValue] = useState<number[]>([200, 800]);
 
-  const tabs = ["Buy", "Sell"];
+  const tabs: string[] = ["Buy", "Sell"];
 
   return (
     <div>
-      <img src='WatchLanding/banner-1.png' className='w-full' />
+      <img src='WatchLanding/banner-1.png' className='w-full' alt="Banner" />
 
       <div className='flex justify-between px-6 mt-[-2.5rem]'>
         <div className='w-[13.125rem]'></div>
@@ -95,32 +95,32 @@ export default function WatchLanding() {
         </LayoutGroup>
 
         <div>
-          <img src='watchLanding/smart-connoisseur.png' />
+          <img src='watchLanding/smart-connoisseur.png' alt="Smart Connoisseur" />
         </div>
       </div>
 
       <div className='px-8 py-8 flex justify-center items-center'>
-        <div className='w-full max-w-7xl flex gap-3'>
-                     <Select
-             variant="bordered"
-             className='w-[15.625rem]'
-             classNames={{
-               base: "bg-white",
-               trigger: "!border-1 !border-[#E5E7EB] focus-within:!border-black rounded-md flex-nowrap items-center gap-2 text-[0.82rem] bg-white !text-black",
-               listbox: "bg-white",
-               listboxWrapper: "bg-white",
-               popoverContent: "bg-white",
-               selectorIcon: "text-black",
-               value: "!text-black",
-               innerWrapper: "!text-black",
-             }}
-             placeholder='Brand'
-           >
-             <SelectItem key="rolex" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Rolex</SelectItem>
-             <SelectItem key="omega" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Omega</SelectItem>
-             <SelectItem key="cartier" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Cartier</SelectItem>
-             <SelectItem key="patek" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Patek Philippe</SelectItem>
-           </Select>
+        <div className='w-full max-w-7xl flex gap-3 justify-between'>
+          <Select
+            variant="bordered"
+            className='flex-1'
+            classNames={{
+              base: "bg-white",
+              trigger: "!border-1 !border-[#E5E7EB] focus-within:!border-black rounded-md flex-nowrap items-center gap-2 text-[0.82rem] bg-white !text-black",
+              listbox: "bg-white",
+              listboxWrapper: "bg-white",
+              popoverContent: "bg-white",
+              selectorIcon: "text-black",
+              value: "!text-black",
+              innerWrapper: "!text-black",
+            }}
+            placeholder='Brand'
+          >
+            <SelectItem key="rolex" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Rolex</SelectItem>
+            <SelectItem key="omega" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Omega</SelectItem>
+            <SelectItem key="cartier" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Cartier</SelectItem>
+            <SelectItem key="patek" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Patek Philippe</SelectItem>
+          </Select>
 
           <Popover placement="bottom-start" classNames={{
             content: [
@@ -128,8 +128,8 @@ export default function WatchLanding() {
             ],
           }}>
             <PopoverTrigger>
-              <Button variant="bordered" className="w-[15.625rem] bg-white justify-between text-[0.82rem] text-[#6B7280] !border-1 !border-[#E5E7EB] focus:!border-[#000000]" radius={'sm'}>
-                Price range
+              <Button variant="bordered" className="flex-1 bg-white justify-between text-[0.82rem] text-black !border-1 !border-[#E5E7EB] focus:!border-[#000000]" radius={'sm'}>
+                {value[0] === 0 && value[1] === 1000 ? 'Price range' : `$${Math.round(value[0])} - $${Math.round(value[1])}`}
               </Button>
             </PopoverTrigger>
             <PopoverContent>
@@ -137,32 +137,32 @@ export default function WatchLanding() {
             </PopoverContent>
           </Popover>
 
-                     <Select
-             variant="bordered"
-             className='w-[15.625rem]'
-             classNames={{
-               base: "bg-white",
-               trigger: "!border-1 !border-[#E5E7EB] focus-within:!border-black rounded-md flex-nowrap items-center gap-2 text-[0.82rem] bg-white !text-black",
-               listbox: "bg-white",
-               listboxWrapper: "bg-white",
-               popoverContent: "bg-white",
-               selectorIcon: "text-black",
-               value: "!text-black",
-               innerWrapper: "!text-black",
-             }}
-             placeholder='Condition'
-           >
-             <SelectItem key="new" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">New</SelectItem>
-             <SelectItem key="used" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Used</SelectItem>
-             <SelectItem key="refurbished" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Refurbished</SelectItem>
-           </Select>
+          <Select
+            variant="bordered"
+            className='flex-1'
+            classNames={{
+              base: "bg-white",
+              trigger: "!border-1 !border-[#E5E7EB] focus-within:!border-black rounded-md flex-nowrap items-center gap-2 text-[0.82rem] bg-white !text-black",
+              listbox: "bg-white",
+              listboxWrapper: "bg-white",
+              popoverContent: "bg-white",
+              selectorIcon: "text-black",
+              value: "!text-black",
+              innerWrapper: "!text-black",
+            }}
+            placeholder='Condition'
+          >
+            <SelectItem key="new" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">New</SelectItem>
+            <SelectItem key="used" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Used</SelectItem>
+            <SelectItem key="refurbished" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Refurbished</SelectItem>
+          </Select>
 
           <Input
             placeholder="Search"
             type="text"
             variant="bordered"
             radius={'sm'}
-            className='w-[15.625rem]'
+            className='flex-1'
             classNames={{
               inputWrapper: '!border-1 !border-[#E5E7EB] focus-within:!border-[#000000] rounded-md text-black bg-white',
             }}
@@ -171,7 +171,7 @@ export default function WatchLanding() {
           <div
             className="bg-black rounded-md px-3 py-1 flex items-center cursor-pointer border-1"
           >
-            <img src='watchLanding/mdi_camera.svg' className="w-6" />
+            <img src='watchLanding/mdi_camera.svg' className="w-6" alt="Camera" />
           </div>
 
           <Button
@@ -182,6 +182,8 @@ export default function WatchLanding() {
           </Button>
         </div>
       </div>
+
+      <Buy />
     </div>
   );
 }
