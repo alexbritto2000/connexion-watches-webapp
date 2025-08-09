@@ -18,7 +18,7 @@ const SliderComponent: React.FC<SliderComponentProps> = ({ value, setValue }) =>
   };
 
   return (
-    <div className="flex flex-col w-full h-full max-w-md items-start justify-center px-4 py-2">
+    <div className="flex flex-col w-full h-full max-w-md items-start justify-center px-4 py-2 bg-white">
       <div className="text-black font-medium mb-6 flex flex-row gap-11">
         <div>
           Price Range
@@ -52,7 +52,7 @@ const SliderComponent: React.FC<SliderComponentProps> = ({ value, setValue }) =>
 
 export default function WatchLanding() {
   const [activeTab, setActiveTab] = useState("Buy");
-  const inputWrapperStyle = "!border-1 !border-[#F0F0F0] focus-within:border-blue-500 rounded-md";
+  const inputWrapperStyle = "!border-1 !border-[#F0F0F0] focus-within:border-theme-color rounded-md";
   const [value, setValue] = useState<number[]>([200, 800]);
 
   const tabs = ["Buy", "Sell"];
@@ -101,21 +101,35 @@ export default function WatchLanding() {
 
       <div className='px-8 py-8 flex justify-center items-center'>
         <div className='w-full max-w-7xl flex gap-3'>
-          <Select
-            variant="bordered"
-            className='w-[15.625rem]'
-            classNames={{
-              trigger: `${inputWrapperStyle} flex-nowrap items-center gap-2 text-[0.82rem] border-[#E5E7EB] border-1`,
-            }}
-            placeholder='Product type'
-          >
-            <SelectItem key="ring">Ring</SelectItem>
-          </Select>
+                     <Select
+             variant="bordered"
+             className='w-[15.625rem]'
+             classNames={{
+               base: "bg-white",
+               trigger: "!border-1 !border-[#E5E7EB] focus-within:!border-black rounded-md flex-nowrap items-center gap-2 text-[0.82rem] bg-white !text-black",
+               listbox: "bg-white",
+               listboxWrapper: "bg-white",
+               popoverContent: "bg-white",
+               selectorIcon: "text-black",
+               value: "!text-black",
+               innerWrapper: "!text-black",
+             }}
+             placeholder='Brand'
+           >
+             <SelectItem key="rolex" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Rolex</SelectItem>
+             <SelectItem key="omega" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Omega</SelectItem>
+             <SelectItem key="cartier" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Cartier</SelectItem>
+             <SelectItem key="patek" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Patek Philippe</SelectItem>
+           </Select>
 
-          <Popover placement="bottom-start">
+          <Popover placement="bottom-start" classNames={{
+            content: [
+              "bg-white",
+            ],
+          }}>
             <PopoverTrigger>
-              <Button variant="bordered" className="w-[15.625rem] justify-between text-[0.82rem] text-[#6B7280] border-1 border-[#E5E7EB]" radius={'sm'}>
-                Select Price Range
+              <Button variant="bordered" className="w-[15.625rem] bg-white justify-between text-[0.82rem] text-[#6B7280] !border-1 !border-[#E5E7EB] focus:!border-[#000000]" radius={'sm'}>
+                Price range
               </Button>
             </PopoverTrigger>
             <PopoverContent>
@@ -123,13 +137,34 @@ export default function WatchLanding() {
             </PopoverContent>
           </Popover>
 
+                     <Select
+             variant="bordered"
+             className='w-[15.625rem]'
+             classNames={{
+               base: "bg-white",
+               trigger: "!border-1 !border-[#E5E7EB] focus-within:!border-black rounded-md flex-nowrap items-center gap-2 text-[0.82rem] bg-white !text-black",
+               listbox: "bg-white",
+               listboxWrapper: "bg-white",
+               popoverContent: "bg-white",
+               selectorIcon: "text-black",
+               value: "!text-black",
+               innerWrapper: "!text-black",
+             }}
+             placeholder='Condition'
+           >
+             <SelectItem key="new" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">New</SelectItem>
+             <SelectItem key="used" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Used</SelectItem>
+             <SelectItem key="refurbished" className="bg-white text-black hover:bg-gray-100 data-[selected=true]:text-black">Refurbished</SelectItem>
+           </Select>
+
           <Input
-            placeholder="Description"
+            placeholder="Search"
             type="text"
             variant="bordered"
             radius={'sm'}
+            className='w-[15.625rem]'
             classNames={{
-              inputWrapper: 'border-1 border-[#E5E7EB]',  // apply your border style here
+              inputWrapper: '!border-1 !border-[#E5E7EB] focus-within:!border-[#000000] rounded-md text-black bg-white',
             }}
           />
 

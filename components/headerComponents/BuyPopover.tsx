@@ -10,7 +10,7 @@ export default function BuyPopover() {
       isOpen={isOpen}
       onOpenChange={setIsOpen}
       showArrow
-      backdrop="opaque"
+      backdrop="transparent"
       placement="bottom"
       classNames={{
         base: ["before:bg-default-200"],

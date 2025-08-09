@@ -28,7 +28,7 @@ export default function LoginPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const inputWrapperStyle = "border border-[#F0F0F0] focus-within:border-[#057A55] focus-within:ring-0 focus-within:ring-offset-0 flex rounded-md";
+  const inputWrapperStyle = "border border-[#F0F0F0] focus-within:border-[#057A55] focus-within:ring-0 focus-within:border-theme-color flex rounded-md";
 
   // Set client-side flag and clear localStorage when component mounts
   useEffect(() => {
