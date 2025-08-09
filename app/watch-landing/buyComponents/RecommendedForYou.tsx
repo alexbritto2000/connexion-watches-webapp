@@ -100,7 +100,7 @@ const RecommendedForYou = () => {
                     </a>
                 </div>
 
-                <div className="flex gap-4 overflow-x-auto pb-4">
+                <div className="flex gap-4 flex-row flex-wrap pb-4">
                     {recommendedWatches.map((watch) => (
                         <div
                             key={watch.id}
