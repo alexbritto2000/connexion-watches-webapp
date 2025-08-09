@@ -16,10 +16,10 @@ const PopularBrands = () => {
     ];
 
     return (
-        <div className="bg-gray-100 py-[3.25rem] px-8">
+        <div className="bg-gray-100 py-[3.25rem] pt-0 px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-[1.5rem]">
-                    <h2 className="text-[1.25rem] font-bold text-black">
+                    <h2 className="text-[1.25rem] text-black">
                         Popular Brands
                     </h2>
                     <a href="#" className="text-[#6B7280] text-sm hover:text-black transition-colors">

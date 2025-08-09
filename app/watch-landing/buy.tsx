@@ -12,6 +12,7 @@ const Buy = () => {
             <PopularBrands />
             <RecommendedForYou />
             <WhyRetailersLove />
+            <RecommendedForYou />
         </div>
     );
 };
