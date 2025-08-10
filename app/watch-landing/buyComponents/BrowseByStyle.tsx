@@ -36,7 +36,7 @@ const BrowseByStyle = () => {
     ];
 
     return (
-        <div className="bg-gray-100 !pt-[6.25rem] py-[3.25rem] px-8">
+        <div className="bg-[#EBF0F2] !pt-[6.25rem] py-[3.25rem] px-8">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-[1.25rem] font-bold text-black mb-[1.5rem] text-left">
                     Browse By Style

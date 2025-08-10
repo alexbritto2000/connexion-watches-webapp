@@ -89,7 +89,7 @@ const RecommendedForYou = () => {
     ];
 
     return (
-        <div className="bg-gray-100 py-[3.25rem] px-8">
+        <div className="bg-[#EBF0F2] py-[3.25rem] px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-[1.5rem]">
                     <h2 className="text-[1.25rem] font-bold text-black">
@@ -144,7 +144,7 @@ const RecommendedForYou = () => {
 
                             {/* Watch Image */}
                             <div className="px-4 pb-4">
-                                <div className="w-full h-[11.5rem] bg-gray-100 rounded-lg flex items-center justify-center">
+                                <div className="w-full h-[11.5rem] bg-[#EBF0F2] rounded-lg flex items-center justify-center">
                                     <img
                                         src={watch.image}
                                         alt={watch.brand}

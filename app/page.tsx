@@ -1,6 +1,9 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/headerComponents/Header";
 import MarketplaceHero from "@/components/marketplace/MarketplaceHero";
+import ExploreMarketPlace from "@/components/marketplace/ExploreMarketPlace";
+import BecomeConnectionCertifier from "./watch-landing/buyComponents/BecomeConnectionCertifier";
+import WhyRetailersLove from "./watch-landing/buyComponents/WhyRetailersLove";
 
 export default function Home() {
   return (
@@ -19,6 +22,9 @@ export default function Home() {
 
       <main className="bg-[#EBF0F2] text-black">
         <MarketplaceHero />
+        <ExploreMarketPlace />
+        <BecomeConnectionCertifier />
+        <WhyRetailersLove />
       </main>
 
       <Footer />

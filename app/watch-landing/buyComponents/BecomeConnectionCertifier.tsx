@@ -25,7 +25,7 @@ const BecomeConnectionCertifier = () => {
     ];
 
     return (
-        <div className='bg-gray-100 pb-[6rem]'>
+        <div className='bg-[#EBF0F2] pb-[6rem]'>
             <div className="max-w-7xl mx-auto">
                 {/* Background with dotted pattern */}
                 <div className="relative rounded-[0.5rem] overflow-hidden">

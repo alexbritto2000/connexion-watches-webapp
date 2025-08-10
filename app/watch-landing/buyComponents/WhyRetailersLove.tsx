@@ -30,7 +30,7 @@ const WhyRetailersLove = () => {
     ];
 
     return (
-        <div className="pb-[3.25rem] px-8 bg-gray-100">
+        <div className="pb-[3.25rem] px-8 bg-[#EBF0F2]">
             <div className="max-w-7xl mx-auto">
                 <div className='flex flex-col gap-7'>
                     <div className='font-medium text-[1.25rem] text-black'>
@@ -128,37 +128,6 @@ const WhyRetailersLove = () => {
                                 No matter where you are, chances are our app is there for you
                             </p>
                         </div>
-                    </div>
-                </div>
-
-                {/* Browse By Category Section */}
-                <div className="mt-16">
-                    <div className="flex justify-between items-center mb-[1.5rem]">
-                        <h2 className="text-[1.25rem] font-bold text-black">
-                            Browse By Category
-                        </h2>
-                        <a href="#" className="text-[#6B7280] text-sm hover:text-black transition-colors">
-                            View all &gt;
-                        </a>
-                    </div>
-                    <div className="grid grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4">
-                        {[
-                            "New Arrivals",
-                            "Under $5k",
-                            "Dress Watches",
-                            "Sport Watches",
-                            "Certified Pre-owned",
-                            "Investment Grade"
-                        ].map((category, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-200 flex items-center justify-center min-h-[4rem]"
-                            >
-                                <span className="text-black text-center">
-                                    {category}
-                                </span>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>
