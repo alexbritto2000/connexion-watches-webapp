@@ -5,6 +5,7 @@ import { LayoutGroup, motion } from "framer-motion";
 import { Button, Input, Popover, PopoverContent, PopoverTrigger, Select, SelectItem } from '@heroui/react';
 import { Slider } from "@heroui/react";
 import Buy from './buy';
+import Footer from '@/components/Footer';
 
 type SliderComponentProps = {
   value: number[];
@@ -184,6 +185,7 @@ export default function WatchLanding() {
       </div>
 
       <Buy />
+      <Footer />
     </div>
   );
 }
