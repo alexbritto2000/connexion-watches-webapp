@@ -2,38 +2,12 @@
 import React from 'react';
 
 const ThisWeeksHighlights = () => {
-    const highlights = [
-        {
-            id: 1,
-            title: "LIMITED SERIES",
-            image: "watchLanding/limited-series.jpg",
-            alt: "Limited Series Watch"
-        },
-        {
-            id: 2,
-            title: "EXQUISITE STYLES & COLLECTIONS",
-            image: "watchLanding/collections.jpg",
-            alt: "Exquisite Styles and Collections"
-        },
-        {
-            id: 3,
-            title: "AUTUMN COLLECTIONS",
-            image: "watchLanding/autumn.jpg",
-            alt: "Autumn Collections"
-        },
-        {
-            id: 4,
-            title: "EXCLUSIVE",
-            image: "watchLanding/exclusive.jpg",
-            alt: "Exclusive Watch"
-        }
-    ];
 
     return (
          <div className="bg-gray-100 py-[3.25rem] pt-0">
             <div className="max-w-7xl mx-auto">
-                <div className="flex justify-between items-center mb-[1.5rem] px-8">
-                    <h2 className="text-[1.25rem] text-black">
+                <div className="flex justify-between items-center mb-[1.5rem]">
+                    <h2 className="font-medium text-[1.25rem] text-black">
                         This Weeks Highlights
                     </h2>
                 </div>
