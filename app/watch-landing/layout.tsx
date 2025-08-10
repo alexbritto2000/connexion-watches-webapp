@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/headerComponents/Header';
+import Footer from '@/components/Footer';
 
 export default function WatchLandingLayout({
   children,
@@ -12,6 +13,7 @@ export default function WatchLandingLayout({
       <main>
         {children}
       </main>
+      <Footer />
     </div>
   );
 }

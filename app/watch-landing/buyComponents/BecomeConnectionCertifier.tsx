@@ -69,7 +69,7 @@ const BecomeConnectionCertifier = () => {
                             <div className="space-y-6 flex flex-col justify-center pr-[4rem]">
 
                                 {connectionCertifierBenefits.map((benefit, index) => (
-                                    <div className="bg-[#F9FAFB] border border-gray-200 rounded-xl py-[2.125rem] px-[2rem] flex flex-row items-center max-w-[30.625rem]">
+                                    <div className="bg-[#F9FAFB] border border-gray-200 rounded-xl py-[2.125rem] px-[2rem] flex flex-row items-center max-w-[30.625rem]" key={index}>
                                         <div className="flex items-center space-x-[1.75rem]">
                                             <div className="shadow-[0px_10.57px_8.63px_0px_#0000000A,0px_1.76px_0px_0px_#0000001F] bg-white rounded-[0.5rem] px-[0.75rem] py-[0.938rem]">
                                                 <img

@@ -1,7 +1,26 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/headerComponents/Header";
+
 export default function Home() {
   return (
-    <div className="bg-red-500 p-4 text-white rounded-lg">
-      Hi - Tailwind is working!
+    <div>
+      <Header hideOptions={{
+        watch: true,
+        sell: true,
+        buy: true,
+        stores: true,
+        marketTrends: true,
+        deals: true,
+        blog: true,
+        authenticityDatabase: true,
+        faq: true
+      }} />
+
+      <main className="bg-[#EBF0F2] text-black">
+        sddddddddddddddddddd
+      </main>
+
+      <Footer />
     </div>
   );
 }
