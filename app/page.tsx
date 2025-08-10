@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/headerComponents/Header";
+import MarketplaceHero from "@/components/marketplace/MarketplaceHero";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       }} />
 
       <main className="bg-[#EBF0F2] text-black">
-        sddddddddddddddddddd
+        <MarketplaceHero />
       </main>
 
       <Footer />

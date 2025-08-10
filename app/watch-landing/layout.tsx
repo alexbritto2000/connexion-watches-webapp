@@ -9,10 +9,16 @@ export default function WatchLandingLayout({
 }) {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header hideOptions={{
+        about: true,
+        howItWorks: true,
+        support: true
+      }} />
+
       <main>
         {children}
       </main>
+
       <Footer />
     </div>
   );

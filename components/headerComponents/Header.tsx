@@ -18,6 +18,9 @@ interface HeaderProps {
     blog?: boolean;
     authenticityDatabase?: boolean;
     faq?: boolean;
+    about?: boolean;
+    howItWorks?: boolean;
+    support?: boolean;
     premium?: boolean;
     language?: boolean;
     notification?: boolean;
@@ -92,6 +95,30 @@ const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
                   className="text-[1rem] font-normal py-2 rounded-[0.75rem] hover:bg-[#F2F6F6] px-[0.75rem] relative"
                 >
                   FAQs
+                </a>
+              )}
+              {!hideOptions.about && (
+                <a
+                  href="/about"
+                  className="text-[1rem] font-normal py-2 rounded-[0.75rem] hover:bg-[#F2F6F6] px-[0.75rem] relative"
+                >
+                  About
+                </a>
+              )}
+              {!hideOptions.howItWorks && (
+                <a
+                  href="/how-it-works"
+                  className="text-[1rem] font-normal py-2 rounded-[0.75rem] hover:bg-[#F2F6F6] px-[0.75rem] relative"
+                >
+                  How it works
+                </a>
+              )}
+              {!hideOptions.support && (
+                <a
+                  href="/support"
+                  className="text-[1rem] font-normal py-2 rounded-[0.75rem] hover:bg-[#F2F6F6] px-[0.75rem] relative"
+                >
+                  Support
                 </a>
               )}
               {!hideOptions.premium && (
