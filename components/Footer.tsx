@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@heroui/button';
 
-const Footer = () => {
+const Footer = ({ showPoweredBy = false }) => {
     return (
         <div className='w-full bg-black flex flex-col justify-center items-center'>
             <div className='grid grid-cols-[1fr_1fr_1fr_auto] max-w-7xl w-full pt-[3rem] pb-[2rem]'>
@@ -10,6 +10,9 @@ const Footer = () => {
                 <div>
                     <div>
                         <img src='/footer/white-connexion.svg' />
+                        {showPoweredBy && (
+                            <img src="/footer/powered-by.svg" className='mt-[0.6rem]' />
+                        )}
                     </div>
 
                     <div className='flex flex-col gap-4 text-white text-[0.82rem] mt-12'>

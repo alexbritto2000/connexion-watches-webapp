@@ -4,6 +4,7 @@ import MarketplaceHero from "@/components/marketplace/MarketplaceHero";
 import ExploreMarketPlace from "@/components/marketplace/ExploreMarketPlace";
 import BecomeConnectionCertifier from "./watch-landing/buyComponents/BecomeConnectionCertifier";
 import WhyRetailersLove from "./watch-landing/buyComponents/WhyRetailersLove";
+import TrustFeatures from "./watch-landing/buyComponents/TrustFeatures";
 
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
         <ExploreMarketPlace />
         <BecomeConnectionCertifier />
         <WhyRetailersLove />
+        <TrustFeatures />
       </main>
 
-      <Footer />
+      <Footer showPoweredBy={true} />
     </div>
   );
 }
