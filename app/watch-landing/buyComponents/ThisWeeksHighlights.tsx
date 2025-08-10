@@ -49,7 +49,13 @@ const ThisWeeksHighlights = () => {
             <div>
                 <div className='flex flex-row w-full p-0'>
                     <div className='w-[30%] relative'>
-                        <img src='watchLanding/limited-series.jpg' alt="Limited Series" className='w-full h-[31.25rem] object-cover' />
+                        <div className="overflow-hidden rounded-[8px] group">
+                            <img
+                                src='watchLanding/limited-series.jpg'
+                                alt="AUTUMN Collections"
+                                className='w-full h-[31.25rem] object-cover group-hover:scale-110 transition-transform duration-500'
+                            />
+                        </div>
 
                         <div className='absolute text-white text-[1.875rem] top-[4rem] flex flex-row justify-center w-full'>
                             Limited Series
@@ -57,7 +63,13 @@ const ThisWeeksHighlights = () => {
                     </div>
 
                     <div className='w-[70%] relative'>
-                        <img src='watchLanding/collections.jpg' alt="Collections" className='w-full h-[31.25rem] object-cover' />
+                        <div className="overflow-hidden rounded-[8px] group">
+                            <img
+                                src='watchLanding/collections.jpg'
+                                alt="Collections"
+                                className='w-full h-[31.25rem] object-cover group-hover:scale-110 transition-transform duration-500'
+                            />
+                        </div>
 
                         <div className='absolute text-white text-[1.875rem] top-[4rem] flex flex-row justify-center w-full'>
                             Exquisite Styles & Collections
@@ -67,7 +79,13 @@ const ThisWeeksHighlights = () => {
 
                 <div className='flex flex-row w-full p-0'>
                     <div className='w-[70%] relative'>
-                        <img src='watchLanding/autumn.jpg' alt="AUTUMN Collections" className='w-full h-[31.25rem] object-cover' />
+                        <div className="overflow-hidden rounded-[8px] group">
+                            <img 
+                                src='watchLanding/autumn.jpg' 
+                                alt="AUTUMN Collections" 
+                                className='w-full h-[31.25rem] object-cover group-hover:scale-110 transition-transform duration-500' 
+                            />
+                        </div>
 
                         <div className='absolute text-white text-[1.875rem] top-[4rem] flex flex-row justify-center w-full'>
                             AUTUMN Collections
@@ -75,7 +93,14 @@ const ThisWeeksHighlights = () => {
                     </div>
 
                     <div className='w-[30%] relative'>
-                        <img src='watchLanding/exclusive.jpg' alt="Exclusive" className='w-full h-[31.25rem] object-cover' />
+                        {/* <img src='watchLanding/exclusive.jpg' alt="Exclusive" className='w-full h-[31.25rem] object-cover' /> */}
+                        <div className="overflow-hidden rounded-[8px] group">
+                            <img
+                                src='watchLanding/exclusive.jpg'
+                                alt="exclusive"
+                                className='w-full h-[31.25rem] object-cover group-hover:scale-110 transition-transform duration-500'
+                            />
+                        </div>
 
                         <div className='absolute text-white text-[1.875rem] bottom-[4rem] flex flex-row justify-center w-full'>
                             Exclusive
