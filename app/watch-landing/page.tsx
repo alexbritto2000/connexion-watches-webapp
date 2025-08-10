@@ -59,7 +59,7 @@ export default function WatchLanding() {
 
   return (
     <div>
-      <img src='WatchLanding/banner-1.png' className='w-full' alt="Banner" />
+      <img src='watchLanding/banner-1.png' className='w-full' alt="Banner" />
 
       <div className='flex justify-between px-6 mt-[-2.5rem]'>
         <div className='w-[13.125rem]'></div>
