@@ -8,7 +8,11 @@ export default function AuthLayout({
 }) {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header hideOptions={{
+        about: true,
+        howItWorks: true,
+        support: true
+      }} />
       <main className="flex-1">
         {children}
       </main>
