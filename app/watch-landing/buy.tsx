@@ -5,6 +5,7 @@ import PopularBrands from './buyComponents/PopularBrands';
 import RecommendedForYou from './buyComponents/RecommendedForYou';
 import WhyRetailersLove from './buyComponents/WhyRetailersLove';
 import ThisWeeksHighlights from './buyComponents/ThisWeeksHighlights';
+import BecomeConnectionCertifier from './buyComponents/BecomeConnectionCertifier';
 
 const Buy = () => {
     return (
@@ -13,8 +14,8 @@ const Buy = () => {
             <PopularBrands />
             <RecommendedForYou />
             <WhyRetailersLove />
-            <RecommendedForYou />
             <ThisWeeksHighlights />
+            <BecomeConnectionCertifier />
         </div>
     );
 };

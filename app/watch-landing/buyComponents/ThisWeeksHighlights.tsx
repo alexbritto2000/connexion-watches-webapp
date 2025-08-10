@@ -4,7 +4,7 @@ import React from 'react';
 const ThisWeeksHighlights = () => {
 
     return (
-         <div className="bg-gray-100 py-[3.25rem] pt-0">
+        <div className="bg-gray-100 py-[3.25rem] pb-[6rem] pt-0">
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-[1.5rem]">
                     <h2 className="font-medium text-[1.25rem] text-black">
