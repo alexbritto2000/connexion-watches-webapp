@@ -93,7 +93,6 @@ const ThisWeeksHighlights = () => {
                     </div>
 
                     <div className='w-[30%] relative'>
-                        {/* <img src='watchLanding/exclusive.jpg' alt="Exclusive" className='w-full h-[31.25rem] object-cover' /> */}
                         <div className="overflow-hidden rounded-[8px] group">
                             <img
                                 src='watchLanding/exclusive.jpg'
