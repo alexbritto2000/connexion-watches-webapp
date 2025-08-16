@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useFilterContext } from '../context/FilterContext';
-import { Pagination } from '@heroui/react';
 
 // Define the props interface
 interface ProductGridProps {
@@ -23,7 +22,7 @@ interface Product {
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
-  const { products } = useFilterContext();
+  const { products, sidebarVisible } = useFilterContext();
   const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});
   const [bookmarks, setBookmarks] = useState<{ [key: number]: boolean }>({});
 
@@ -39,6 +38,17 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
       ...prev,
       [watchId]: !prev[watchId]
     }));
+  };
+
+  // Dynamic grid columns based on sidebar visibility and custom breakpoints
+  const getGridColumns = () => {
+    if (sidebarVisible) {
+      // Sidebar visible: fewer columns
+      return "grid-cols-4 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4";
+    } else {
+      // Sidebar hidden: more columns
+      return "grid-cols-6 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6";
+    }
   };
 
   // Sample products data - you can replace this with your actual data
@@ -135,7 +145,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
 
   return (
     <div className="flex-1">
-      <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className={`grid ${getGridColumns()} gap-4`}>
         {sampleProducts.map((product) => (
           <div
             key={product.id}
