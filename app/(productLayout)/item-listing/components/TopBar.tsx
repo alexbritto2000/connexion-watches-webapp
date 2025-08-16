@@ -179,7 +179,7 @@ const TopBar: React.FC<TopBarProps> = ({
           )}
         </div>
 
-        <div className='border border-[#E5E7EB] bg-white rounded-[6px] p-[0.75rem] cursor-pointer hover:bg-gray-50'>
+        <div className='border border-[#E5E7EB] bg-white rounded-[6px] p-[0.9rem] cursor-pointer hover:bg-gray-50'>
           <img src='search-icon.svg' alt='Search' />
         </div>
       </div>
