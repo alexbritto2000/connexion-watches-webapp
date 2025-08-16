@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useFilterContext } from '../context/FilterContext';
+import { Pagination } from '@heroui/react';
 
 // Define the props interface
 interface ProductGridProps {
@@ -239,7 +240,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
           </div>
         ))}
       </div>
-    </div>  
+    </div>
   );
 };
 
