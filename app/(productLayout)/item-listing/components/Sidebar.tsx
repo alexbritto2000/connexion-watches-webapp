@@ -84,21 +84,21 @@ const Sidebar: React.FC<SidebarProps> = ({
   return (
     <div className="w-80 bg-white rounded-lg shadow-sm p-6 mr-6">
       {/* Hide Filters Button */}
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <button 
           onClick={onHideFilters}
           className="bg-black text-white px-4 py-2 rounded-md font-medium hover:bg-gray-800 transition-colors w-full"
         >
           Hide filters
         </button>
-      </div>
+      </div> */}
 
       {/* Selected Filters */}
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <p className="text-gray-500 text-sm">
           Selected filters: {getSelectedFiltersText(filters)}
         </p>
-      </div>
+      </div> */}
 
       {/* Price Filter */}
       <div className="mb-6">

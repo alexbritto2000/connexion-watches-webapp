@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { useFilterContext } from '../context/FilterContext';
+import { Button } from '@heroui/button';
 
 // Define the props interface
 interface TopBarProps {
@@ -15,38 +16,38 @@ interface TopBarProps {
 // Helper function to generate selected filters text
 const getSelectedFiltersText = (filters: any) => {
   const selectedFilters: string[] = [];
-  
+
   // Check price range
   if (filters.priceRange && (filters.priceRange[0] !== 120 || filters.priceRange[1] !== 300)) {
     selectedFilters.push(`Price: $${filters.priceRange[0]} - $${filters.priceRange[1]}`);
   }
-  
+
   // Check year range
   if (filters.yearRange && (filters.yearRange[0] !== 2000 || filters.yearRange[1] !== 2025)) {
     selectedFilters.push(`Year: ${filters.yearRange[0]} - ${filters.yearRange[1]}`);
   }
-  
+
   // Check conditions
   if (filters.conditions && filters.conditions.length > 0) {
     selectedFilters.push(`Condition: ${filters.conditions.join(', ')}`);
   }
-  
+
   // Check deal ratings
   if (filters.dealRatings && filters.dealRatings.length > 0) {
     selectedFilters.push(`Deal Rating: ${filters.dealRatings.join(', ')}`);
   }
-  
+
   // Check search query
   if (filters.searchQuery && filters.searchQuery.trim() !== '') {
     selectedFilters.push(`Search: "${filters.searchQuery}"`);
   }
-  
+
   return selectedFilters.length > 0 ? selectedFilters.join(' | ') : 'No filter selected';
 };
 
-const TopBar: React.FC<TopBarProps> = ({ 
-  productCount = "2,356", 
-  currentRange = "1 - 12", 
+const TopBar: React.FC<TopBarProps> = ({
+  productCount = "2,356",
+  currentRange = "1 - 12",
   sortBy = "New Arrivals",
   onSearch,
   onShowFilters,
@@ -86,7 +87,7 @@ const TopBar: React.FC<TopBarProps> = ({
     updateFilters({ sortBy: option });
     setIsSortDropdownOpen(false);
   };
-  
+
   return (
     <div className="pt-[0.5rem] mb-[1.5rem]">
       <div className='flex flex-row justify-between items-center w-full'>
@@ -96,20 +97,20 @@ const TopBar: React.FC<TopBarProps> = ({
 
         <div className='flex flex-row items-center gap-[2.5rem]'>
           {/* Sort */}
-          <div className="flex items-center gap-2 relative" ref={sortDropdownRef}>
+          <div className="flex items-center gap-[0.5rem] relative" ref={sortDropdownRef}>
             <span className="text-[#9CA3AF] text-[0.82rem]">
               Sort by:
             </span>
-            
+
             <button
-              className="flex items-center gap-2 text-black font-medium hover:text-gray-700 transition-colors"
+              className="flex items-center gap-[0.5rem] text-[0.82rem] text-black hover:text-gray-700 transition-colors cursor-pointer"
               onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
             >
               {sortBy}
-              <svg 
-                className={`w-4 h-4 transition-transform duration-200 ${isSortDropdownOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${isSortDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -123,9 +124,8 @@ const TopBar: React.FC<TopBarProps> = ({
                   {sortOptions.map((option) => (
                     <button
                       key={option}
-                      className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${
-                        option === sortBy ? 'text-black bg-[#EBF0F2] font-medium' : 'text-gray-700'
-                      }`}
+                      className={`w-full cursor-pointer text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${option === sortBy ? 'text-black bg-[#EBF0F2] font-medium' : 'text-gray-700'
+                        }`}
                       onClick={() => handleSortOptionClick(option)}
                     >
                       {option}
@@ -137,56 +137,50 @@ const TopBar: React.FC<TopBarProps> = ({
           </div>
 
           {/* Product Count */}
-          <div className="text-gray-600">
-            Showing {currentRange} out of {productCount} Products
+          <div className="text-black text-[0.82rem]">
+            <span>
+              Showing {currentRange}
+            </span>
+
+            <span className='text-[#9CA3AF] ml-[6px]'>
+              out of {productCount} Products
+            </span>
           </div>
         </div>
       </div>
 
+      <div className='flex flex-row items-center mt-[1.25rem] gap-[1rem]'>
+        <Button onClick={onShowFilters} className='bg-black text-white rounded-md'>
+          {sidebarVisible ? 'Hide filters' : 'Show filters'}
+        </Button>
 
-      <br />
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        {/* Left side - Filters */}
-        <div className="flex items-center gap-4">
-          <button 
-            onClick={onShowFilters}
-            className="bg-black text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors"
-          >
-            {sidebarVisible ? 'Hide filters' : 'Show filters'}
-          </button>
-          <div className="flex items-center gap-2">
-            <span className="text-gray-500">Selected filters:</span>
-            <span className="text-gray-400">
+        <div className='border border-[#E5E7EB] bg-white rounded-[6px] py-[0.75rem] px-[1rem] gap-[0.5rem] flex flex-row flex-1 items-center justify-between'>
+          <div className='flex flex-row gap-[0.5rem]'>
+            <div className='text-black text-[0.82rem]'>
+              Selected filters:
+            </div>
+
+            <div className='text-[#9CA3AF] text-[0.82rem] italic'>
               {getSelectedFiltersText(filters)}
-            </span>
-            {getSelectedFiltersText(filters) !== 'No filter selected' && (
-              <button
-                onClick={clearFilters}
-                className="ml-2 text-xs text-red-600 hover:text-red-800 underline"
-              >
-                Clear all
-              </button>
-            )}
+            </div>
           </div>
-        </div>
-        
-        {/* Right side - Sort, Count, Search */}
-        <div className="flex items-center gap-6">
-          
-          {/* Search */}  
-          <div className="flex items-center">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              onChange={(e) => onSearch(e.target.value)}
-            />
-            <button className="bg-gray-100 px-3 py-2 rounded-r-md border border-l-0 border-gray-300 hover:bg-gray-200 transition-colors">
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+
+          {/* Close button - only show when filters are selected */}
+          {getSelectedFiltersText(filters) !== 'No filter selected' && (
+            <button
+              onClick={clearFilters}
+              className='text-[#9CA3AF] hover:text-black transition-colors cursor-pointer'
+              title="Clear all filters"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-          </div>
+          )}
+        </div>
+
+        <div className='border border-[#E5E7EB] bg-white rounded-[6px] p-[0.75rem] cursor-pointer hover:bg-gray-50'>
+          <img src='search-icon.svg' alt='Search' />
         </div>
       </div>
     </div>
