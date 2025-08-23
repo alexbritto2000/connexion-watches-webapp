@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { IoArrowBack, IoHeart, IoBookmark, IoShare, IoStar, IoInformationCircle, IoChatbubble, IoShieldCheckmark, IoRocket, IoCard, IoCheckmarkCircle } from 'react-icons/io5';
 import ProductDetail from './components/productDetail';
 import ProductInfo from './components/productInfo';
+import RecommendedForYou from './components/RecommendedForYou';
+import TrustFeatures from './components/TrustFeatures';
 
 interface Product {
   id: number;
@@ -139,8 +141,19 @@ const ProductDetailPage = () => {
   return (
     <div className='bg-[#EBF0F2]'>
       <div className="max-w-7xl mx-auto pb-[5rem]">
-        <ProductDetail mockProduct={product}/>
-        <ProductInfo mockProduct={product}/>
+        <ProductDetail mockProduct={product} />
+
+        <div className='mt-[2.5rem]'>
+          <ProductInfo mockProduct={product} />
+        </div>
+
+        <div className='mt-[6.5rem]'>
+          <RecommendedForYou />
+        </div>
+
+        <div className='mt-[6.5rem]'>
+          <TrustFeatures />
+        </div>
       </div>
     </div>
   );

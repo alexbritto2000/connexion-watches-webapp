@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { GoChevronRight, GoClock } from 'react-icons/go';
 
 const RecommendedForYou = () => {
     const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});
@@ -22,81 +23,87 @@ const RecommendedForYou = () => {
     const recommendedWatches = [
         {
             id: 1,
-            image: "watchLanding/recommend-1.png",
+            image: "/watchLanding/recommend-1.png",
             model: "2023 Model",
             brand: "Patek Philippe Nautilus",
             price: "$12,999",
             dealStatus: "Great Deal",
             dealColor: "bg-[#057A55]",
             seller: "LUX Store",
-            condition: "Like New"
+            condition: "Like New",
+            bids: 16
         },
         {
             id: 2,
-            image: "watchLanding/recommend-2.png",
+            image: "/watchLanding/recommend-2.png",
             model: "2023 Model",
             brand: "Patek Philippe Nautilus",
             price: "$12,999",
             dealStatus: "Good deal",
             dealColor: "bg-[#31C48D]",
             seller: "LUX Store",
-            condition: "Like New"
+            condition: "Like New",
+            bids: 16
         },
         {
             id: 3,
-            image: "watchLanding/recommend-3.png",
+            image: "/watchLanding/recommend-3.png",
             model: "2023 Model",
             brand: "Patek Philippe Nautilus",
             price: "$12,999",
             dealStatus: "Fair deal",
             dealColor: "bg-[#E3A008]",
             seller: "LUX Store",
-            condition: "Like New"
+            condition: "Like New",
+            bids: 16
         },
         {
             id: 4,
-            image: "watchLanding/recommend-4.png",
+            image: "/watchLanding/recommend-4.png",
             model: "2023 Model",
             brand: "Patek Philippe Nautilus",
             price: "$12,999",
             dealStatus: "High priced",
             dealColor: "bg-[#F05252]",
             seller: "LUX Store",
-            condition: "Like New"
+            condition: "Like New",
+            bids: 16
         },
         {
             id: 5,
-            image: "watchLanding/recommend-5.png",
+            image: "/watchLanding/recommend-5.png",
             model: "2023 Model",
             brand: "Patek Philippe Nautilus",
             price: "$12,999",
             dealStatus: "Uncertain",
             dealColor: "bg-[#9CA3AF]",
             seller: "LUX Store",
-            condition: "Like New"
+            condition: "Like New",
+            bids: 16
         },
         {
             id: 6,
-            image: "watchLanding/recommend-6.png",
+            image: "/watchLanding/recommend-6.png",
             model: "2023 Model",
             brand: "Patek Philippe Nautilus",
             price: "$12,999",
             dealStatus: "Fair deal",
             dealColor: "bg-[#E3A008]",
             seller: "LUX Store",
-            condition: "Like New"
+            condition: "Like New",
+            bids: 16
         }
     ];
 
     return (
-        <div className="bg-[#EBF0F2] py-[3.25rem] px-8">
+        <div className="bg-[#EBF0F2]">
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-[1.5rem]">
                     <h2 className="text-[1.25rem] font-bold text-black">
                         Recommended For You
                     </h2>
-                    <a href="#" className="text-[#6B7280] text-sm hover:text-black transition-colors">
-                        View all &gt;
+                    <a href="#" className="text-[#111928] text-sm hover:text-gray transition-colors flex flex-row items-center gap-[4px]">
+                        View all <GoChevronRight />
                     </a>
                 </div>
 
@@ -122,7 +129,7 @@ const RecommendedForYou = () => {
                                         className="cursor-pointer"
                                     >
                                         <img
-                                            src="watchLanding/heart.svg"
+                                            src="/watchLanding/heart.svg"
                                             alt="Heart"
                                             className={`w-4 h-4 transition-colors ${favorites[watch.id] ? 'opacity-100' : 'opacity-60'}`}
                                         />
@@ -134,7 +141,7 @@ const RecommendedForYou = () => {
                                         className="cursor-pointer"
                                     >
                                         <img
-                                            src="watchLanding/bookmark.svg"
+                                            src="/watchLanding/bookmark.svg"
                                             alt="Bookmark"
                                             className={`w-4 h-4 transition-colors ${bookmarks[watch.id] ? 'opacity-100' : 'opacity-60'}`}
                                         />
@@ -144,12 +151,17 @@ const RecommendedForYou = () => {
 
                             {/* Watch Image */}
                             <div className="px-4 pb-4">
-                                <div className="w-full h-[11.5rem] bg-[#EBF0F2] rounded-lg flex items-center justify-center">
+                                <div className="w-full h-[12rem] bg-[#EBF0F2] rounded-lg flex items-center justify-center relative">
                                     <img
                                         src={watch.image}
                                         alt={watch.brand}
                                         className="w-full h-full object-cover rounded-lg"
                                     />
+
+                                    <div className='absolute flex flex-row gap-[4px] items-center bg-[#F3F4F6] py-[6px] px-[7px] text-[0.875rem] left-0 bottom-0 text-black rounded-[2px]'>
+                                        <GoClock color="black" />
+                                        2d 15h
+                                    </div>
                                 </div>
                             </div>
 
@@ -163,23 +175,24 @@ const RecommendedForYou = () => {
                                     {watch.brand}
                                 </h3>
 
-                                <div className='flex flex-row items-center gap-1'>
-                                    <p className="text-black font-bold text-lg mb-3">
-                                        {watch.price}
-                                    </p>
+                                <div className='flex flex-row items-center mb-3'>
+                                    <div className='flex flex-row items-center gap-[0.5rem]'>
+                                        <div className="text-black font-bold text-lg">
+                                            {watch.price}
+                                        </div>
 
-                                    {/* Deal Status */}
-                                    <div className="flex items-center justify-between mb-3">
-                                        <span className={`px-2 py-[2px] rounded text-[0.75rem] text-white font-medium ${watch.dealColor}`}>
-                                            {watch.dealStatus}
-                                        </span>
+                                        <div className='w-[3px] h-[3px] rounded-full bg-[#D1D5DB]' />
+
+                                        <div className='text-[#6B7280] text-[0.875rem]'>
+                                            {watch.bids} bids
+                                        </div>
                                     </div>
                                 </div>
 
 
                                 {/* Seller Info */}
                                 <div className="flex items-center gap-2">
-                                    <img src='watchLanding/lux-store.png' />
+                                    <img src='/watchLanding/lux-store.png' />
 
                                     <div className='flex flex-row items-center gap-1 pb-[1px]'>
                                         <span className="text-[#2F3033] text-[0.75rem] font-semibold">
@@ -187,11 +200,11 @@ const RecommendedForYou = () => {
                                         </span>
 
                                         <div className='flex flex-row items-center'>
-                                            <img src='review-left.svg' />
+                                            <img src='/review-left.svg' />
                                             <span className="text-[#2F3033] text-[0.75rem] font-semibold">
                                                 88
                                             </span>
-                                            <img src='review-right.svg' />
+                                            <img src='/review-right.svg' />
                                         </div>
                                     </div>
                                 </div>

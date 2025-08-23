@@ -46,7 +46,7 @@ const BrowseByStyle = () => {
                     {watchCategories.map((category) => (
                         <div
                             key={category.id}
-                            className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform duration-200"
+                            className="flex flex-col items-center cursor-pointer hover:scale-102 transition-transform duration-200"
                         >
                             <div className="w-[14.625rem] bg-white rounded-lg shadow-md mb-4 flex flex-col items-center justify-center overflow-hidden">
                                 <img src={category.image} className='h-[18.75rem] object-cover'/>

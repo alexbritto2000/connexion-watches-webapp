@@ -99,7 +99,7 @@ const ThisWeeksHighlights = () => {
                                 alt="exclusive"
                                 className='w-full h-[31.25rem] object-cover group-hover:scale-110 transition-transform duration-500'
                             />
-                        </div>
+                        </div>  
 
                         <div className='absolute text-white text-[1.875rem] bottom-[4rem] flex flex-row justify-center w-full'>
                             Exclusive
