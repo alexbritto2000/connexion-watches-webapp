@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import TopBar from './components/TopBar';
 import Sidebar from './components/Sidebar';
 import ProductGrid from './components/ProductGrid';
@@ -7,6 +8,7 @@ import { FilterProvider, useFilterContext } from './context/FilterContext';
 import CustomPagination from '../../../components/CustomPagination';
 
 const PageContent = () => {
+  const router = useRouter();
   const { filters, sidebarVisible, toggleSidebar, products, loading } = useFilterContext();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12; // Assuming 12 items per page
@@ -26,7 +28,8 @@ const PageContent = () => {
 
   const handleProductClick = (product: any) => {
     console.log('Product clicked:', product);
-    // Navigate to product detail page or open modal
+    // Navigate to product detail page
+    router.push(`/item-listing/${product.id}`);
   };
 
   const handlePageChange = (page: number) => {
