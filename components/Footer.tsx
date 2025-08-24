@@ -65,7 +65,7 @@ const Footer = ({ showPoweredBy = false }) => {
                     </div>
 
                     <div className='flex flex-col gap-2 mt-6 text-[0.83rem] cursor-pointer'>
-                        <div className="hover:underline">Terms & Conditions</div>
+                        <div className="hover:underline">Terms &amp; Conditions</div>
                         <div className="hover:underline">Privacy Policy</div>
                         <div className="hover:underline">Shipping Policy</div>
                     </div>
