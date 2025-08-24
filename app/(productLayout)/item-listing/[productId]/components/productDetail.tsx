@@ -78,10 +78,10 @@ const ProductDetail = (product: any) => {
                                 className="border border-[#E5E7EB] rounded-[2px] p-[0.8rem] cursor-pointer"
                             >
                                 <motion.img
-                                    src="/productDetails/3d-box.svg"
                                     alt="Zoom"
-                                    whileTap={{ scale: 0.8 }}
+                                    src="/productDetails/3d-box.svg"
                                     transition={{ duration: 0.2 }}
+                                    whileTap={{ scale: 0.8 }}
                                 />
                             </motion.div>
 
@@ -90,32 +90,32 @@ const ProductDetail = (product: any) => {
                                 className="border border-[#E5E7EB] rounded-[2px] p-[0.8rem] cursor-pointer"
                             >
                                 <motion.img
-                                    src="/productDetails/zoom.svg"
                                     alt="Zoom"
-                                    whileTap={{ scale: 0.8 }}
+                                    src="/productDetails/zoom.svg"
                                     transition={{ duration: 0.2 }}
+                                    whileTap={{ scale: 0.8 }}
                                 />
                             </motion.div>
                         </div>
                     </div>
 
                     {/* different images */}
-                    <div className='flex flex-row gap-[1rem] mt-[1rem]'>
+                    <div className="flex flex-row gap-[1rem] mt-[1rem]">
                         {images.map((img: string, index: number) => (
                             <div
-                                className={`rounded-[0.25rem] border-4 ${safeSelectedImage === index ? 'border-[#D1D5DB]' : 'border-transparent'}`}
+                                className={`rounded-[0.25rem] border-4 ${safeSelectedImage === index ? "border-[#D1D5DB]" : "border-transparent"}`}
                                 key={index}
                                 onClick={() => setSelectedImage(index)}
                             >
                                 <motion.img
-                                    src={img}
                                     alt="Product Image"
-                                    className='cursor-pointer w-[5rem] h-[5rem]'
-                                    whileTap={{ scale: 0.8 }}
-                                    transition={{ duration: 0.2 }}
+                                    className="cursor-pointer w-[5rem] h-[5rem]"
                                     onError={(e) => {
-                                        e.currentTarget.src = '/productDetails/product-overview-1.png' // fallback image
+                                        e.currentTarget.src = "/productDetails/product-overview-1.png" // fallback image
                                     }}
+                                    src={img}
+                                    transition={{ duration: 0.2 }}
+                                    whileTap={{ scale: 0.8 }}
                                 />
                             </div>
                         ))}
