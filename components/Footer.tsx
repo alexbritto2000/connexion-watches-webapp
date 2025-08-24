@@ -38,10 +38,10 @@ const Footer = ({ showPoweredBy = false }) => {
                         Product Catalog
                     </div>
 
-                    <div className='flex flex-col gap-2 mt-6 text-[0.83rem] cursor-pointer'>
-                        <div className="hover:underline">Watch</div>
-                        <div className="hover:underline">Coins</div>
-                        <div className="hover:underline">Jewelry</div>
+                    <div className='flex flex-col gap-2 mt-6 text-[0.83rem]'>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Watch</button>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Coins</button>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Jewelry</button>
                     </div>
                 </div>
 
@@ -51,10 +51,10 @@ const Footer = ({ showPoweredBy = false }) => {
                         Company
                     </div>
 
-                    <div className='flex flex-col gap-2 mt-6 text-[0.83rem] cursor-pointer'>
-                        <div className="hover:underline">About Us</div>
-                        <div className="hover:underline">FAQs</div>
-                        <div className="hover:underline">Newsletter</div>
+                    <div className='flex flex-col gap-2 mt-6 text-[0.83rem]'>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">About Us</button>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">FAQs</button>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Newsletter</button>
                     </div>
                 </div>
 
@@ -64,10 +64,10 @@ const Footer = ({ showPoweredBy = false }) => {
                         Info
                     </div>
 
-                    <div className='flex flex-col gap-2 mt-6 text-[0.83rem] cursor-pointer'>
-                        <div className="hover:underline">Terms &amp; Conditions</div>
-                        <div className="hover:underline">Privacy Policy</div>
-                        <div className="hover:underline">Shipping Policy</div>
+                    <div className='flex flex-col gap-2 mt-6 text-[0.83rem]'>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Terms &amp; Conditions</button>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Privacy Policy</button>
+                        <button className="text-left hover:underline focus:underline focus:outline-none">Shipping Policy</button>
                     </div>
                 </div>
             </div>
