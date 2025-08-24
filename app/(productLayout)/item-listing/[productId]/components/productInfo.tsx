@@ -43,11 +43,11 @@ const ProductInfo = (product: any) => {
       <div className="flex items-center gap-[0.25rem]">
         {[...Array(5)].map((_, index) =>
           index < data.rating ? (
-            <div>
+            <div key={`gold-star-${index}`}>
               <img src="/productDetails/gold-star.svg" alt="gold-star" />
             </div>
           ) : (
-            <div>
+            <div key={`gray-star-${index}`}>
               <img src="/productDetails/gray-star.svg" alt="gray-star" />
             </div>
           ),
@@ -277,7 +277,7 @@ const ProductInfo = (product: any) => {
                         </div>
 
                         <div>
-                          <img src="/productDetails/blue-share.svg" />
+                          <img src="/productDetails/blue-share.svg" alt="share icon" />
                         </div>
                       </div>
                     </div>
@@ -310,8 +310,8 @@ const ProductInfo = (product: any) => {
                 </h1>
               </div>
 
-              {reviews.map((review:any)=>(
-                <div className="mt-[0.75rem] backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A] border border-white rounded-[0.5rem] bg-white p-[1rem]">
+              {reviews.map((review:any, index:number)=>(
+                <div key={`review-${index}`} className="mt-[0.75rem] backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A] border border-white rounded-[0.5rem] bg-white p-[1rem]">
                   <div className="flex flex-row justify-between">
                     <div className="font-semibold text-[#333333]">
                       {review.name}

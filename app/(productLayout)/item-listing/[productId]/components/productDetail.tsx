@@ -5,10 +5,12 @@ import { GoStar } from "react-icons/go";
 import { TiStarFullOutline } from "react-icons/ti";
 import { CiStar } from "react-icons/ci";
 import RatingStars from "@/components/RatingStars";
+import { useRouter } from "next/navigation";
 
 const ProductDetail = (product: any) => {
   console.log("product details", product);
   const [selectedImage, setSelectedImage] = useState(0);
+  const router = useRouter();
 
   // Simple error handling - check if product data exists
   if (!product || !product.mockProduct) {
@@ -182,7 +184,10 @@ const ProductDetail = (product: any) => {
             </div>
 
             <div className="flex flex-col gap-[0.5rem]">
-              <Button className="w-full bg-black text-white rounded-[2px] mt-[2rem] text-[0.9rem] font-semibold">
+              <Button 
+                className="w-full bg-black text-white rounded-[2px] mt-[2rem] text-[0.9rem] font-semibold"
+                onClick={() => router.push('/buy')}
+              >
                 Buy
               </Button>
 

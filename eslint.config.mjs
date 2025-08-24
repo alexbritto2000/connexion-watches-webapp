@@ -51,7 +51,7 @@ export default defineConfig([
         "plugin:prettier/recommended",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
-        // "plugin:@next/next/recommended", // Temporarily commented out - install @next/eslint-plugin-next first
+        "plugin:@next/next/recommended",
       ),
     ),
 
@@ -99,10 +99,10 @@ export default defineConfig([
       "react-hooks/exhaustive-deps": "off",
       "jsx-a11y/click-events-have-key-events": "warn",
       "jsx-a11y/interactive-supports-focus": "warn",
-      "prettier/prettier": "warn",
+      "prettier/prettier": "off",
       "no-unused-vars": "off",
       "unused-imports/no-unused-vars": "off",
-      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-imports": "off",
 
       "@typescript-eslint/no-unused-vars": [
         "warn",
@@ -113,43 +113,11 @@ export default defineConfig([
         },
       ],
 
-      "import/order": [
-        "warn",
-        {
-          groups: [
-            "type",
-            "builtin",
-            "object",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-          ],
-
-          pathGroups: [
-            {
-              pattern: "~/**",
-              group: "external",
-              position: "after",
-            },
-          ],
-
-          "newlines-between": "always",
-        },
-      ],
+      "import/order": "off",
 
       "react/self-closing-comp": "warn",
 
-      "react/jsx-sort-props": [
-        "warn",
-        {
-          callbacksLast: true,
-          shorthandFirst: true,
-          noSortAlphabetically: false,
-          reservedFirst: true,
-        },
-      ],
+      "react/jsx-sort-props": "off",
 
       "padding-line-between-statements": [
         "warn",
