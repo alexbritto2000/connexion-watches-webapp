@@ -19,6 +19,7 @@ import ProductDetail from "./components/productDetail";
 import ProductInfo from "./components/productInfo";
 import RecommendedForYou from "./components/RecommendedForYou";
 import TrustFeatures from "./components/TrustFeatures";
+import PatekPhilippe from "./components/patekPhilippe";
 
 interface Product {
   id: number;
@@ -155,7 +156,7 @@ const ProductDetailPage = () => {
 
   return (
     <div className="bg-[#EBF0F2]">
-      <div className="max-w-7xl mx-auto pb-[5rem]">
+      <div className="max-w-7xl mx-auto">
         <ProductDetail mockProduct={product} />
 
         <div className="mt-[2.5rem]">
@@ -170,6 +171,10 @@ const ProductDetailPage = () => {
           <TrustFeatures />
         </div>
       </div>
+
+      <div className="bg-white">
+        <PatekPhilippe />
+      </div>  
     </div>
   );
 };

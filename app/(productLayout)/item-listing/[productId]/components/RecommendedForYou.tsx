@@ -195,13 +195,17 @@ const RecommendedForYou = () => {
                   <span className="text-[#6B7280] text-[0.82rem]">
                     LUX Store
                   </span>
+
+                  {/* Review Info */}
+                  <div className="flex items-center">
+                    <img src="/review-left.svg" alt="Review Left" />
+                    <span className="text-[#6B7280] text-[0.82rem] font-medium">
+                      4.8
+                    </span>
+                    <img src="/review-right.svg" alt="Review Right" />
+                  </div>
                 </div>
-                {/* Review Info */}
-                <div className="flex items-center gap-2">
-                  <img src="/review-left.svg" alt="Review Left" />
-                  <span className="text-[#6B7280] text-[0.82rem]">4.8</span>
-                  <img src="/review-right.svg" alt="Review Right" />
-                </div>
+
               </div>
             </div>
           ))}

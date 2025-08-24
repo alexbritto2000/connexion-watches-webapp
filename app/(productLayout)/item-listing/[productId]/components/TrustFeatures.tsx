@@ -4,7 +4,7 @@ import React from "react";
 
 const TrustFeatures = () => {
   return (
-    <div className="bg-[#EBF0F2] text-black px-8 pb-[6.25rem]">
+    <div className="bg-[#EBF0F2] text-black px-8">
       <div className="max-w-7xl mx-auto py-[4rem]">
         <div className="grid grid-cols-3 gap-10">
           <div className="flex flex-row items-start gap-3">

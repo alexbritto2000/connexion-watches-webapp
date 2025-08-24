@@ -35,19 +35,19 @@ const ProductDetail = (product: any) => {
   return (
     <div className="text-[#6B7280] text-[0.875rem]">
       <div className="flex flex-row items-center gap-[3rem] pt-[2.5rem] pb-[1.25rem] px-2">
-        <button className="cursor-pointer hover:underline">Home</button>
+        <div>Home</div>
 
-        <button className="cursor-pointer hover:underline">Watch</button>
+        <div>Watch</div>
 
-        <button className="cursor-pointer hover:underline">
+        <div>
           Dress Watches
-        </button>
+        </div>
 
-        <button className="cursor-pointer hover:underline">
+        <div>
           Patek Philippe
-        </button>
+        </div>
 
-        <button className="cursor-pointer hover:underline">Nautilus</button>
+        <div>Nautilus</div>
 
         <div className="text-black">Ref #: 412515621</div>
       </div>
