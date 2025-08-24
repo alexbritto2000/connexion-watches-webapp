@@ -12,9 +12,9 @@ const ThisWeeksHighlights = () => {
                         <h2 className="text-[1.25rem] font-bold text-black">
                             Browse By Category
                         </h2>
-                        <a href="#" className="text-[#6B7280] text-sm hover:text-black transition-colors">
+                        <button className="text-[#6B7280] text-sm hover:text-black transition-colors">
                             View all &gt;
-                        </a>
+                        </button>
                     </div>
                     <div className="grid grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4">
                         {[

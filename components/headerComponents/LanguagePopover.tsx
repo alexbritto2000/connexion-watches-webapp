@@ -44,13 +44,13 @@ export default function LanguagePopover() {
         onMouseLeave={() => setIsOpen(false)}
       >
         <div className="space-y-1">
-          <a href="#" className="block px-3 py-1 rounded-md hover:bg-gray-50 transition-colors hover:text-[#057A55] text-sm">
+            <button className="block w-full text-left px-3 py-1 rounded-md hover:bg-gray-50 transition-colors hover:text-[#057A55] text-sm">
             Tamil
-          </a>
+          </button>
 
-          <a href="#" className="block px-3 py-1 rounded-md hover:bg-gray-50 transition-colors hover:text-[#057A55] text-sm">
+          <button className="block w-full text-left px-3 py-1 rounded-md hover:bg-gray-50 transition-colors hover:text-[#057A55] text-sm">
             Japanese
-          </a>
+          </button>
         </div>
       </PopoverContent>
     </Popover>

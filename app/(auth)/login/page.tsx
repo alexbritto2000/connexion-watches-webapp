@@ -210,9 +210,9 @@ export default function LoginPage() {
                       Remember me
                     </label>
 
-                    <a href="#" className="text-[#9CA3AF] cursor-pointer text-[0.75rem] underline">
+                    <button className="text-[#9CA3AF] cursor-pointer text-[0.75rem] underline">
                       Forgot password?
-                    </a>
+                    </button>
                   </div>
 
                   <Button

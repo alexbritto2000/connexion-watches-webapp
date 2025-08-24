@@ -22,9 +22,9 @@ const PopularBrands = () => {
                     <h2 className="text-[1.25rem] text-black">
                         Popular Brands
                     </h2>
-                    <a href="#" className="text-[#6B7280] text-sm hover:text-black transition-colors">
+                    <button className="text-[#6B7280] text-sm hover:text-black transition-colors">
                         View all &gt;
-                    </a>
+                    </button>
                 </div>
 
                 <div className="grid grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">

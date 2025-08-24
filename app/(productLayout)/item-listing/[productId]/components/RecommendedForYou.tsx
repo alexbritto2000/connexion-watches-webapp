@@ -102,9 +102,9 @@ const RecommendedForYou = () => {
                     <h2 className="text-[1.25rem] font-bold text-black">
                         Recommended For You
                     </h2>
-                    <a href="#" className="text-[#111928] text-sm hover:text-gray transition-colors flex flex-row items-center gap-[4px]">
-                        View all <GoChevronRight />
-                    </a>
+                    <button className="text-[#111928] text-sm hover:text-gray transition-colors flex flex-row items-center gap-[4px]">
+                        View all &gt;
+                    </button>
                 </div>
 
                 <div className="flex gap-4 flex-row flex-wrap pb-4">
