@@ -9,9 +9,9 @@ const Footer = ({ showPoweredBy = false }) => {
                 {/* 1st col */}
                 <div>
                     <div>
-                        <img src='/footer/white-connexion.svg' />
+                        <img src='/footer/white-connexion.svg' alt="Connexion Logo" />
                         {showPoweredBy && (
-                            <img src="/footer/powered-by.svg" className='mt-[0.6rem]' />
+                            <img src="/footer/powered-by.svg" className='mt-[0.6rem]' alt="Powered By" />
                         )}
                     </div>
 
@@ -81,9 +81,9 @@ const Footer = ({ showPoweredBy = false }) => {
 
                 <div className='flex items-center gap-10'>
                     <div className='flex items-center gap-4'>
-                        <img src='/footer/x.svg' className='cursor-pointer' />
-                        <img src='/footer/FacebookLogo.svg' className='cursor-pointer' />
-                        <img src='/footer/InstagramLogo.svg' className='cursor-pointer' />
+                        <img src='/footer/x.svg' className='cursor-pointer' alt="X (Twitter)" />
+                        <img src='/footer/FacebookLogo.svg' className='cursor-pointer' alt="Facebook" />
+                        <img src='/footer/InstagramLogo.svg' className='cursor-pointer' alt="Instagram" />
                     </div> 
                 </div>
             </div>

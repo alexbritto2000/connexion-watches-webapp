@@ -192,21 +192,14 @@ const RecommendedForYou = () => {
 
                                 {/* Seller Info */}
                                 <div className="flex items-center gap-2">
-                                    <img src='/watchLanding/lux-store.png' />
-
-                                    <div className='flex flex-row items-center gap-1 pb-[1px]'>
-                                        <span className="text-[#2F3033] text-[0.75rem] font-semibold">
-                                            {watch.seller}
-                                        </span>
-
-                                        <div className='flex flex-row items-center'>
-                                            <img src='/review-left.svg' />
-                                            <span className="text-[#2F3033] text-[0.75rem] font-semibold">
-                                                88
-                                            </span>
-                                            <img src='/review-right.svg' />
-                                        </div>
-                                    </div>
+                                    <img src='/watchLanding/lux-store.png' alt="LUX Store" />
+                                    <span className="text-[#6B7280] text-[0.82rem]">LUX Store</span>
+                                </div>
+                                {/* Review Info */}
+                                <div className="flex items-center gap-2">
+                                    <img src='/review-left.svg' alt="Review Left" />
+                                    <span className="text-[#6B7280] text-[0.82rem]">4.8</span>
+                                    <img src='/review-right.svg' alt="Review Right" />
                                 </div>
                             </div>
                         </div>

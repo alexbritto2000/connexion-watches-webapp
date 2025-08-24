@@ -49,7 +49,7 @@ const BrowseByStyle = () => {
                             className="flex flex-col items-center cursor-pointer hover:scale-102 transition-transform duration-200"
                         >
                             <div className="w-[14.625rem] bg-white rounded-lg shadow-md mb-4 flex flex-col items-center justify-center overflow-hidden">
-                                <img src={category.image} className='h-[18.75rem] object-cover'/>
+                                <img src={category.image} className='h-[18.75rem] object-cover' alt={category.name} />
                                 <span className="text-[#1F2A37] bg-[#F3F4F6] font-medium text-center py-[1.313rem] w-full">
                                     {category.name}
                                 </span>

@@ -110,7 +110,7 @@ const WhyRetailersLove = () => {
                                     "Fraud Protection"
                                 ].map((feature, index) => (
                                     <div key={index} className="flex items-center gap-3">
-                                        <img src='white-tick.svg' />
+                                        <img src='white-tick.svg' alt="Checkmark" />
                                         <span className="text-[0.82rem] font-medium">
                                             {feature}
                                         </span>
