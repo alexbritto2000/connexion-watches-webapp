@@ -300,7 +300,7 @@ export default function LoginPage() {
             </div>
 
             <p className="text-center text-[0.82rem] mt-4 text-[#333333]">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link
                 className="text-[#333333] text-[0.82rem] underline cursor-pointer"
                 href="/register"
@@ -353,7 +353,7 @@ export default function LoginPage() {
 
               <div className="flex items-center gap-2 absolute right-4 bottom-4">
                 {/* LEFT ARROW */}
-                <div
+                <button
                   onClick={handlePrev}
                   className={`p-0 h-fit w-4 cursor-pointer transition-opacity duration-200 ${
                     current === 0
@@ -366,10 +366,10 @@ export default function LoginPage() {
                     alt="Left Arrow"
                     className="w-4 h-4 transform rotate-180"
                   />
-                </div>
+                </button>
 
                 {/* RIGHT ARROW */}
-                <div
+                <button
                   onClick={handleNext}
                   className={`p-0 h-fit w-4 cursor-pointer transition-opacity duration-200 ${
                     current === items.length - 1
@@ -382,7 +382,7 @@ export default function LoginPage() {
                     alt="Right Arrow"
                     className="w-4 h-4"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>

@@ -57,7 +57,7 @@ const ProductDetail = (product: any) => {
           <div className="bg-white rounded-[0.5rem] relative">
             <img
               src={images[safeSelectedImage]}
-              alt="Product Image"
+              alt=""
               className="w-[100%] rounded-[6px]"
               onError={(e) => {
                 e.currentTarget.src = "/productDetails/product-overview-1.png"; // fallback image
@@ -90,13 +90,13 @@ const ProductDetail = (product: any) => {
           {/* different images */}
           <div className="flex flex-row gap-[1rem] mt-[1rem]">
             {images.map((img: string, index: number) => (
-              <div
+              <button
                 className={`rounded-[0.25rem] border-4 ${safeSelectedImage === index ? "border-[#D1D5DB]" : "border-transparent"}`}
                 key={index}
                 onClick={() => setSelectedImage(index)}
               >
                 <motion.img
-                  alt="Product Image"
+                  alt=""
                   className="cursor-pointer w-[5rem] h-[5rem]"
                   onError={(e) => {
                     e.currentTarget.src =
@@ -106,7 +106,7 @@ const ProductDetail = (product: any) => {
                   transition={{ duration: 0.2 }}
                   whileTap={{ scale: 0.8 }}
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>

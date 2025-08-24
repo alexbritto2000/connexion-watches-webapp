@@ -22,8 +22,7 @@ export default function BuyPopover() {
       }}
     >
       <PopoverTrigger>
-        <a
-          href="#"
+        <button
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
           className="text-[1rem] font-normal py-3 rounded-[0.75rem] hover:bg-[#F2F6F6] px-[0.75rem] relative flex items-center gap-2"
@@ -36,7 +35,7 @@ export default function BuyPopover() {
               isOpen ? "rotate-0" : "rotate-180"
             }`}
           />
-        </a>
+        </button>
       </PopoverTrigger>
 
       <PopoverContent
@@ -133,7 +132,7 @@ export default function BuyPopover() {
                     Limited Edition
                   </h4>
                   <p className="text-sm text-gray-600 mt-1">
-                    Exclusive and rare collector's pieces
+                    Exclusive and rare collector&apos;s pieces
                   </p>
                 </div>
               </div>

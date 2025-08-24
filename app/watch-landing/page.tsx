@@ -77,7 +77,7 @@ export default function WatchLanding() {
             {tabs.map((tab) => {
               const isActive = activeTab === tab;
               return (
-                <div
+                <button
                   key={tab}
                   className={`relative px-[4rem] flex items-center rounded-lg cursor-pointer ${
                     isActive ? "text-white" : "text-black"
@@ -99,7 +99,7 @@ export default function WatchLanding() {
 
                   {/* No opacity or scale animation here */}
                   <span className="relative z-10">{tab}</span>
-                </div>
+                </button>
               );
             })}
           </div>

@@ -138,8 +138,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Price Filter */}
       <div className="mb-6">
-        <div
-          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
+        <button
+          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem] w-full text-left"
           onClick={() => toggleSection("price")}
         >
           <h3 className="font-semibold text-black">Price</h3>
@@ -148,7 +148,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             size={20}
             className={`text-gray-500 transition-transform ${expandedSections.price ? "rotate-180" : ""}`}
           />
-        </div>
+        </button>
 
         {expandedSections.price && (
           <div className="mt-[1rem] mb-[2rem]">
@@ -182,8 +182,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Year Filter */}
       <div className="mb-6">
-        <div
-          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
+        <button
+          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem] w-full text-left"
           onClick={() => toggleSection("year")}
         >
           <h3 className="font-semibold text-black">Year</h3>
@@ -192,7 +192,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             size={20}
             className={`text-gray-500 transition-transform ${expandedSections.year ? "rotate-180" : ""}`}
           />
-        </div>
+        </button>
 
         {expandedSections.year && (
           <div className="mt-[1rem] mb-[2rem]">
@@ -226,8 +226,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Condition Filter */}
       <div className="mb-6">
-        <div
-          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
+        <button
+          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem] w-full text-left"
           onClick={() => toggleSection("condition")}
         >
           <h3 className="font-semibold text-black">Condition</h3>
@@ -236,7 +236,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             size={20}
             className={`text-gray-500 transition-transform ${expandedSections.condition ? "rotate-180" : ""}`}
           />
-        </div>
+        </button>
 
         {expandedSections.condition && (
           <div className="mt-[1rem] mb-[2rem] flex flex-col gap-[0.75rem]">
@@ -261,8 +261,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Deal Rating Filter */}
       <div className="mb-6">
-        <div
-          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
+        <button
+          className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem] w-full text-left"
           onClick={() => toggleSection("dealRating")}
         >
           <h3 className="font-semibold text-black">Deal rating</h3>
@@ -271,7 +271,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             size={20}
             className={`text-gray-500 transition-transform ${expandedSections.dealRating ? "rotate-180" : ""}`}
           />
-        </div>
+        </button>
 
         {expandedSections.dealRating && (
           <div className="mt-[1rem] mb-[2rem] flex flex-col gap-[0.75rem]">

@@ -22,8 +22,7 @@ export default function LanguagePopover() {
       }}
     >
       <PopoverTrigger>
-        <a
-          href="#"
+        <button
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
           className="text-[1rem] font-normal py-3 rounded-[0.75rem] hover:bg-[#F2F6F6] px-[0.75rem] relative flex items-center gap-2"
@@ -36,7 +35,7 @@ export default function LanguagePopover() {
               isOpen ? "rotate-0" : "rotate-180"
             }`}
           />
-        </a>
+        </button>
       </PopoverTrigger>
 
       <PopoverContent

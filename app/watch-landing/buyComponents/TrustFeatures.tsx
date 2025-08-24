@@ -52,7 +52,7 @@ const TrustFeatures = () => {
               <div className="font-medium">Sell with Ease</div>
 
               <div className="text-[0.82rem]">
-                "Listing your items is quick and simple. Start selling watches,
+                &quot;Listing your items is quick and simple. Start selling watches,
                 coins, and jewelry in just a few clicks.
               </div>
             </div>

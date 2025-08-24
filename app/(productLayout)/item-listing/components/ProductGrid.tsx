@@ -150,9 +150,9 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
     <div className="flex-1">
       <div className={`grid ${getGridColumns()} gap-4`}>
         {sampleProducts.map((product) => (
-          <div
+          <button
             key={product.id}
-            className="bg-white rounded-lg shadow-md border border-gray-200 cursor-pointer hover:scale-102 transition-transform duration-200"
+            className="bg-white rounded-lg shadow-md border border-gray-200 cursor-pointer hover:scale-102 transition-transform duration-200 text-left"
             onClick={() => onProductClick && onProductClick(product)}
           >
             {/* Card Header with Condition Tag and Icons */}
@@ -252,7 +252,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>
