@@ -45,12 +45,19 @@ export default function MarketTrendsPopover() {
       >
         <div className="space-y-4">
           {/* <h3 className="text-lg font-bold text-gray-900 mb-4">Market Analysis</h3> */}
-          
+
           <div className="space-y-3">
-            <a href="/market-trends/price-index" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/market-trends/price-index"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Price Index" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Price Index"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -63,10 +70,17 @@ export default function MarketTrendsPopover() {
               </div>
             </a>
 
-            <a href="/market-trends/brand-performance" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/market-trends/brand-performance"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Brand Performance" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Brand Performance"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
@@ -79,10 +93,17 @@ export default function MarketTrendsPopover() {
               </div>
             </a>
 
-            <a href="/market-trends/seasonal-trends" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/market-trends/seasonal-trends"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Seasonal Trends" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Seasonal Trends"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-amber-600 transition-colors">
@@ -95,10 +116,17 @@ export default function MarketTrendsPopover() {
               </div>
             </a>
 
-            <a href="/market-trends/investment-guide" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/market-trends/investment-guide"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Investment Guide" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Investment Guide"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">

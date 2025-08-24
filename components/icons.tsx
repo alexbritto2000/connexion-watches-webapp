@@ -17,7 +17,10 @@ export const SunFilledIcon: FC<IconProps> = ({ size = 24, className = "" }) => (
   </svg>
 );
 
-export const MoonFilledIcon: FC<IconProps> = ({ size = 24, className = "" }) => (
+export const MoonFilledIcon: FC<IconProps> = ({
+  size = 24,
+  className = "",
+}) => (
   <svg
     width={size}
     height={size}
@@ -29,7 +32,10 @@ export const MoonFilledIcon: FC<IconProps> = ({ size = 24, className = "" }) => 
   </svg>
 );
 
-export const ChevronDownIcon: FC<IconProps> = ({ size = 24, className = "" }) => (
+export const ChevronDownIcon: FC<IconProps> = ({
+  size = 24,
+  className = "",
+}) => (
   <svg
     width={size}
     height={size}
@@ -38,6 +44,11 @@ export const ChevronDownIcon: FC<IconProps> = ({ size = 24, className = "" }) =>
     stroke="currentColor"
     className={className}
   >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
   </svg>
 );

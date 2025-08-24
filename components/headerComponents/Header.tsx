@@ -1,11 +1,15 @@
 "use client";
-import React from 'react';
-import dynamic from 'next/dynamic';
+import React from "react";
+import dynamic from "next/dynamic";
 
-const BuyPopover = dynamic(() => import('./BuyPopover'), { ssr: false });
-const SellPopover = dynamic(() => import('./SellPopover'), { ssr: false });
-const MarketTrendsPopover = dynamic(() => import('./MarketTrendsPopover'), { ssr: false });
-const LanguagePopover = dynamic(() => import('./LanguagePopover'), { ssr: false });
+const BuyPopover = dynamic(() => import("./BuyPopover"), { ssr: false });
+const SellPopover = dynamic(() => import("./SellPopover"), { ssr: false });
+const MarketTrendsPopover = dynamic(() => import("./MarketTrendsPopover"), {
+  ssr: false,
+});
+const LanguagePopover = dynamic(() => import("./LanguagePopover"), {
+  ssr: false,
+});
 
 interface HeaderProps {
   hideOptions?: {
@@ -31,24 +35,30 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-200 text-[#1C1F25]">  
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-200 text-[#1C1F25]">
       <div className="w-full px-8 py-4 font-medium flex items-center justify-between relative z-10 md:px-6 sm:px-4">
         {/* Desktop Navigation */}
         <div className="w-full flex justify-center items-center">
           <div className="max-w-7xl w-full flex justify-between items-center">
-            <div className='flex gap-[1rem]'>
+            <div className="flex gap-[1rem]">
               <div className="flex gap-4">
                 <div>
-                  <img src="/logo.svg" className="w-[6.25rem] cursor-pointer" alt="Connexion Watches" />
+                  <img
+                    src="/logo.svg"
+                    className="w-[6.25rem] cursor-pointer"
+                    alt="Connexion Watches"
+                  />
                 </div>
               </div>
 
               {!hideOptions.watch && (
-                <div className='flex items-center gap-1'>
-                  <img src="/header/watch.svg" alt="watch" className="w-[1rem]" />
-                  <div className='text-[0.8rem] text-[#1C1F25]'>
-                    Watch
-                  </div>
+                <div className="flex items-center gap-1">
+                  <img
+                    src="/header/watch.svg"
+                    alt="watch"
+                    className="w-[1rem]"
+                  />
+                  <div className="text-[0.8rem] text-[#1C1F25]">Watch</div>
                 </div>
               )}
             </div>
@@ -133,8 +143,12 @@ const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
 
             <div className="flex flex-row gap-[1.5rem] items-center">
               {!hideOptions.language && <LanguagePopover />}
-              {!hideOptions.notification && <img src="/header/notification.svg" alt="Notification" />}
-              {!hideOptions.message && <img src="/header/message.svg" alt="Message" />}
+              {!hideOptions.notification && (
+                <img src="/header/notification.svg" alt="Notification" />
+              )}
+              {!hideOptions.message && (
+                <img src="/header/message.svg" alt="Message" />
+              )}
               {!hideOptions.user && <img src="/header/user.svg" alt="User" />}
               {/* <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md font-medium transition-colors">
                 Premium
@@ -147,4 +161,4 @@ const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
   );
 };
 
-export default Header; 
+export default Header;

@@ -1,50 +1,50 @@
-import Image from 'next/image';
-import { HiOutlineSearch } from 'react-icons/hi';
+import Image from "next/image";
+import { HiOutlineSearch } from "react-icons/hi";
 
 const MarketplaceHero = () => {
   const marketplaces = [
     {
       id: 1,
-      name: 'Watches',
-      image: '/marketplace/marketplace-1.jpg',
-      alt: 'Luxury watch marketplace'
+      name: "Watches",
+      image: "/marketplace/marketplace-1.jpg",
+      alt: "Luxury watch marketplace",
     },
     {
       id: 2,
-      name: 'Coins',
-      image: '/marketplace/marketplace-2.jpg',
-      alt: 'Coin and medal marketplace'
+      name: "Coins",
+      image: "/marketplace/marketplace-2.jpg",
+      alt: "Coin and medal marketplace",
     },
     {
       id: 3,
-      name: 'Trading Cards',
-      image: '/marketplace/marketplace-3.jpg',
-      alt: 'Trading card marketplace'
+      name: "Trading Cards",
+      image: "/marketplace/marketplace-3.jpg",
+      alt: "Trading card marketplace",
     },
     {
       id: 4,
-      name: 'Jewelry',
-      image: '/marketplace/marketplace-4.jpg',
-      alt: 'Jewelry marketplace'
+      name: "Jewelry",
+      image: "/marketplace/marketplace-4.jpg",
+      alt: "Jewelry marketplace",
     },
     {
       id: 5,
-      name: 'Fashion',
-      image: '/marketplace/marketplace-5.jpg',
-      alt: 'Fashion and accessories marketplace'
+      name: "Fashion",
+      image: "/marketplace/marketplace-5.jpg",
+      alt: "Fashion and accessories marketplace",
     },
     {
       id: 6,
-      name: 'Collectibles',
-      image: '/marketplace/marketplace-6.jpg',
-      alt: 'General collectibles marketplace'
-    }
+      name: "Collectibles",
+      image: "/marketplace/marketplace-6.jpg",
+      alt: "General collectibles marketplace",
+    },
   ];
 
   return (
     <section className="bg-[#EBF0F2] py-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <div className='flex flex-col items-center mb-[2rem]'>
+        <div className="flex flex-col items-center mb-[2rem]">
           {/* Main Heading */}
           <h1 className="text-[4rem] md:text-5xl sm:text-[2rem] font-semibold text-black mb-4 w-[45rem] leading-[100%]">
             Discover Specialized Marketplaces
@@ -52,8 +52,9 @@ const MarketplaceHero = () => {
 
           {/* Description */}
           <p className="w-[29.375rem] text-[0.82rem] leading-[150%]">
-            Connexion brings together passionate collectors and enthusiasts across premium categories.
-            Select a marketplace to begin your journey.
+            Connexion brings together passionate collectors and enthusiasts
+            across premium categories. Select a marketplace to begin your
+            journey.
           </p>
         </div>
 
@@ -70,10 +71,10 @@ const MarketplaceHero = () => {
             </button>
           </div>
         </div>
-        
-        <div className='grid grid-cols-4 gap-[0.5rem] items-end'>
+
+        <div className="grid grid-cols-4 gap-[0.5rem] items-end">
           {/* column 1 */}
-          <div className='flex flex-col gap-[0.5rem]'>
+          <div className="flex flex-col gap-[0.5rem]">
             <div className="overflow-hidden rounded-[8px] group">
               <img
                 src="/marketplace/marketplace-1.jpg"
@@ -110,7 +111,7 @@ const MarketplaceHero = () => {
           </div>
 
           {/* column 4 */}
-          <div className='flex flex-col gap-[0.5rem]'>
+          <div className="flex flex-col gap-[0.5rem]">
             <div className="overflow-hidden rounded-[8px] group">
               <img
                 src="/marketplace/marketplace-5.jpg"
@@ -127,7 +128,6 @@ const MarketplaceHero = () => {
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>

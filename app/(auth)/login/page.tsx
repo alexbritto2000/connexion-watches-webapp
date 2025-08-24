@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 import { Button, Input, Checkbox } from "@heroui/react";
 
 import { IoStar } from "react-icons/io5";
@@ -13,13 +13,13 @@ import Link from "next/link";
 const StarRating = ({ rating }: { rating: number }) => {
   return (
     <div className="flex gap-1">
-      {Array.from({ length: 5 }, (_, index) => (
+      {Array.from({ length: 5 }, (_, index) =>
         index < rating ? (
           <IoStar key={index} className="w-3" />
         ) : (
           <IoIosStarOutline key={index} className="w-3" />
-        )
-      ))}
+        ),
+      )}
     </div>
   );
 };
@@ -28,12 +28,13 @@ export default function LoginPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const inputWrapperStyle = "border border-[#F0F0F0] focus-within:border-[#057A55] focus-within:ring-0 focus-within:border-theme-color flex rounded-md";
+  const inputWrapperStyle =
+    "border border-[#F0F0F0] focus-within:border-[#057A55] focus-within:ring-0 focus-within:border-theme-color flex rounded-md";
 
   // Set client-side flag and clear localStorage when component mounts
   useEffect(() => {
     setIsClient(true);
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.clear();
     }
   }, []);
@@ -64,29 +65,32 @@ export default function LoginPage() {
   // Form validation schema
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .email('Invalid email address')
-      .required('Email is required'),
+      .email("Invalid email address")
+      .required("Email is required"),
     password: Yup.string()
-      .min(6, 'Password must be at least 6 characters')
-      .required('Password is required')
+      .min(6, "Password must be at least 6 characters")
+      .required("Password is required"),
   });
 
   // Initial form values
   const initialValues = {
-    email: '',
-    password: '',
-    rememberMe: false
+    email: "",
+    password: "",
+    rememberMe: false,
   };
 
   // Form submission handler
-  const handleSubmit = (values: any, { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }) => {
-    console.log('Login form submitted:', values);
+  const handleSubmit = (
+    values: any,
+    { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void },
+  ) => {
+    console.log("Login form submitted:", values);
     setSubmitting(false);
     // Add your navigation or authentication logic here
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('role', 'retailer');
+    if (typeof window !== "undefined") {
+      localStorage.setItem("role", "retailer");
     }
-    router.push('/retailer'); // Redirect to dashboard after login
+    router.push("/retailer"); // Redirect to dashboard after login
   };
 
   const [current, setCurrent] = useState(0);
@@ -98,9 +102,12 @@ export default function LoginPage() {
   const handleNext = () => {
     if (current < items.length - 1) setCurrent(current + 1);
   };
-  
+
   return (
-    <div className="bg-[#F3F6FA] flex flex-col flex-1 text-[#1C1F25]" suppressHydrationWarning>
+    <div
+      className="bg-[#F3F6FA] flex flex-col flex-1 text-[#1C1F25]"
+      suppressHydrationWarning
+    >
       {/* Main Content */}
       <main className="flex flex-1 items-center justify-center p-4">
         <div className="bg-white rounded-lg shadow-md flex max-w-full py-5 px-5 gap-[5.125rem]">
@@ -128,103 +135,136 @@ export default function LoginPage() {
               >
                 {({ errors, touched, isSubmitting }) => (
                   <Form className="flex flex-col gap-4">
-                  {/* Email Field */}
-                  <Field name="email">
-                    {({ field }: { field: any }) => (
-                      <div>
-                        <Input
-                          {...field}
-                          variant="bordered"
-                          placeholder="Email"
-                          classNames={{
-                            inputWrapper: `${inputWrapperStyle} ${touched.email && errors.email ? 'border-red-500' : ''
-                              }`,
-                            input: "focus:outline-none focus:ring-0 focus:border-transparent",
-                            base: "focus:outline-none focus:ring-0",
-                          }}
-                        />
-                        {touched.email && errors.email && (
-                          <div className="text-red-500 text-xs mt-1">
-                            {errors.email}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </Field>
-
-                  {/* Password Field */}
-                  <Field name="password">
-                    {({ field }: { field: any }) => (
-                      <div>
-                        <div className="relative">
+                    {/* Email Field */}
+                    <Field name="email">
+                      {({ field }: { field: any }) => (
+                        <div>
                           <Input
                             {...field}
                             variant="bordered"
-                            placeholder="Password"
-                            type={showPassword ? "text" : "password"}
+                            placeholder="Email"
                             classNames={{
-                              inputWrapper: `${inputWrapperStyle} ${touched.password && errors.password ? 'border-red-500' : ''
-                                }`,
-                              input: "focus:outline-none focus:ring-0 focus:border-transparent",
+                              inputWrapper: `${inputWrapperStyle} ${
+                                touched.email && errors.email
+                                  ? "border-red-500"
+                                  : ""
+                              }`,
+                              input:
+                                "focus:outline-none focus:ring-0 focus:border-transparent",
                               base: "focus:outline-none focus:ring-0",
                             }}
                           />
-                          <button
-                            type="button"
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="absolute inset-y-0 right-3 flex items-center text-gray-500"
-                            tabIndex={-1}
-                          >
-                            {showPassword ? (
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                              </svg>
-                            ) : (
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                              </svg>
-                            )}
-                          </button>
+                          {touched.email && errors.email && (
+                            <div className="text-red-500 text-xs mt-1">
+                              {errors.email}
+                            </div>
+                          )}
                         </div>
-                        {touched.password && errors.password && (
-                          <div className="text-red-500 text-xs mt-1">
-                            {errors.password}
+                      )}
+                    </Field>
+
+                    {/* Password Field */}
+                    <Field name="password">
+                      {({ field }: { field: any }) => (
+                        <div>
+                          <div className="relative">
+                            <Input
+                              {...field}
+                              variant="bordered"
+                              placeholder="Password"
+                              type={showPassword ? "text" : "password"}
+                              classNames={{
+                                inputWrapper: `${inputWrapperStyle} ${
+                                  touched.password && errors.password
+                                    ? "border-red-500"
+                                    : ""
+                                }`,
+                                input:
+                                  "focus:outline-none focus:ring-0 focus:border-transparent",
+                                base: "focus:outline-none focus:ring-0",
+                              }}
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setShowPassword(!showPassword)}
+                              className="absolute inset-y-0 right-3 flex items-center text-gray-500"
+                              tabIndex={-1}
+                            >
+                              {showPassword ? (
+                                <svg
+                                  className="w-5 h-5"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                  />
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                  />
+                                </svg>
+                              ) : (
+                                <svg
+                                  className="w-5 h-5"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                                  />
+                                </svg>
+                              )}
+                            </button>
                           </div>
-                        )}
-                      </div>
-                    )}
-                  </Field>
+                          {touched.password && errors.password && (
+                            <div className="text-red-500 text-xs mt-1">
+                              {errors.password}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </Field>
 
-                  <div className="flex items-center justify-between text-sm">
-                    <label className="flex items-center cursor-pointer">
-                      <Field name="rememberMe">
-                        {({ field }: { field: any }) => (
-                          <Checkbox
-                            {...field}
-                            checked={field.value}
-                            className="accent-black"
-                          />
-                        )}
-                      </Field>
-                      Remember me
-                    </label>
+                    <div className="flex items-center justify-between text-sm">
+                      <label className="flex items-center cursor-pointer">
+                        <Field name="rememberMe">
+                          {({ field }: { field: any }) => (
+                            <Checkbox
+                              {...field}
+                              checked={field.value}
+                              className="accent-black"
+                            />
+                          )}
+                        </Field>
+                        Remember me
+                      </label>
 
-                    <button className="text-[#9CA3AF] cursor-pointer text-[0.75rem] underline">
-                      Forgot password?
-                    </button>
-                  </div>
+                      <button className="text-[#9CA3AF] cursor-pointer text-[0.75rem] underline">
+                        Forgot password?
+                      </button>
+                    </div>
 
-                  <Button
-                    type="submit"
-                    className="bg-black text-white rounded py-2 font-medium mt-3"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Logging in...' : 'Log in'}
-                  </Button>
-                </Form>
-              )}
-            </Formik>
+                    <Button
+                      type="submit"
+                      className="bg-black text-white rounded py-2 font-medium mt-3"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Logging in..." : "Log in"}
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
             )}
 
             <div className="flex items-center my-5">
@@ -235,21 +275,36 @@ export default function LoginPage() {
 
             <div className="flex gap-4 space-between">
               <Button className="rounded flex items-center justify-center bg-[#F9FAFB] flex-1">
-                <img src="/auth/google.svg" alt="Google" className="cursor-pointer" />
+                <img
+                  src="/auth/google.svg"
+                  alt="Google"
+                  className="cursor-pointer"
+                />
               </Button>
 
               <Button className="rounded flex items-center justify-center bg-[#F9FAFB] flex-1">
-                <img src="/auth/fb.svg" alt="Facebook" className="cursor-pointer" />
+                <img
+                  src="/auth/fb.svg"
+                  alt="Facebook"
+                  className="cursor-pointer"
+                />
               </Button>
 
               <Button className="rounded flex items-center justify-center bg-[#F9FAFB] flex-1">
-                <img src="/auth/apple.svg" alt="Apple" className="cursor-pointer" />
+                <img
+                  src="/auth/apple.svg"
+                  alt="Apple"
+                  className="cursor-pointer"
+                />
               </Button>
             </div>
 
             <p className="text-center text-[0.82rem] mt-4 text-[#333333]">
               Don't have an account?{" "}
-              <Link className="text-[#333333] text-[0.82rem] underline cursor-pointer" href="/register">
+              <Link
+                className="text-[#333333] text-[0.82rem] underline cursor-pointer"
+                href="/register"
+              >
                 Sign up
               </Link>
             </p>
@@ -300,8 +355,11 @@ export default function LoginPage() {
                 {/* LEFT ARROW */}
                 <div
                   onClick={handlePrev}
-                  className={`p-0 h-fit w-4 cursor-pointer transition-opacity duration-200 ${current === 0 ? "opacity-50 pointer-events-none" : "opacity-100"
-                    }`}
+                  className={`p-0 h-fit w-4 cursor-pointer transition-opacity duration-200 ${
+                    current === 0
+                      ? "opacity-50 pointer-events-none"
+                      : "opacity-100"
+                  }`}
                 >
                   <img
                     src="/auth/jam_arrow-up.svg"
@@ -313,15 +371,19 @@ export default function LoginPage() {
                 {/* RIGHT ARROW */}
                 <div
                   onClick={handleNext}
-                  className={`p-0 h-fit w-4 cursor-pointer transition-opacity duration-200 ${current === items.length - 1
-                    ? "opacity-50 pointer-events-none"
-                    : "opacity-100"
-                    }`}
+                  className={`p-0 h-fit w-4 cursor-pointer transition-opacity duration-200 ${
+                    current === items.length - 1
+                      ? "opacity-50 pointer-events-none"
+                      : "opacity-100"
+                  }`}
                 >
-                  <img src="/auth/jam_arrow-up.svg" alt="Right Arrow" className="w-4 h-4" />
+                  <img
+                    src="/auth/jam_arrow-up.svg"
+                    alt="Right Arrow"
+                    className="w-4 h-4"
+                  />
                 </div>
               </div>
-
             </div>
           </div>
         </div>

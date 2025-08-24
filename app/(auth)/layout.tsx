@@ -1,5 +1,5 @@
-import React from 'react';
-import Header from '@/components/headerComponents/Header';
+import React from "react";
+import Header from "@/components/headerComponents/Header";
 
 export default function AuthLayout({
   children,
@@ -8,14 +8,14 @@ export default function AuthLayout({
 }) {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header hideOptions={{
-        about: true,
-        howItWorks: true,
-        support: true
-      }} />
-      <main className="flex-1">
-        {children}
-      </main>
+      <Header
+        hideOptions={{
+          about: true,
+          howItWorks: true,
+          support: true,
+        }}
+      />
+      <main className="flex-1">{children}</main>
     </div>
   );
 }

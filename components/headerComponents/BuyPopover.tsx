@@ -45,12 +45,19 @@ export default function BuyPopover() {
       >
         <div className="space-y-4">
           {/* <h3 className="text-lg font-bold text-gray-900 mb-4">Browse Watches</h3> */}
-          
+
           <div className="space-y-3">
-            <a href="/buy/luxury" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/buy/luxury"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Luxury" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Luxury"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -63,10 +70,17 @@ export default function BuyPopover() {
               </div>
             </a>
 
-            <a href="/buy/sport" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/buy/sport"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Sport" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Sport"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
@@ -79,10 +93,17 @@ export default function BuyPopover() {
               </div>
             </a>
 
-            <a href="/buy/vintage" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/buy/vintage"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Vintage" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Vintage"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-amber-600 transition-colors">
@@ -95,10 +116,17 @@ export default function BuyPopover() {
               </div>
             </a>
 
-            <a href="/buy/limited-edition" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+            <a
+              href="/buy/limited-edition"
+              className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
               <div className="flex items-start space-x-3">
                 <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <img src="/header/watch.svg" alt="Limited" className="w-5 h-5" />
+                  <img
+                    src="/header/watch.svg"
+                    alt="Limited"
+                    className="w-5 h-5"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">

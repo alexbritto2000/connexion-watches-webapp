@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { useFilterContext } from '../context/FilterContext';
-import { Slider, Checkbox } from '@heroui/react';
-import { ChevronDownIcon } from '../../../../components/icons';
+import React, { useState, useEffect } from "react";
+import { useFilterContext } from "../context/FilterContext";
+import { Slider, Checkbox } from "@heroui/react";
+import { ChevronDownIcon } from "../../../../components/icons";
 
 // Define the props interface
 interface SidebarProps {
@@ -15,40 +15,56 @@ const getSelectedFiltersText = (filters: any) => {
   const selectedFilters: string[] = [];
 
   // Check price range
-  if (filters.priceRange && (filters.priceRange[0] !== 120 || filters.priceRange[1] !== 300)) {
-    selectedFilters.push(`Price: $${filters.priceRange[0]} - $${filters.priceRange[1]}`);
+  if (
+    filters.priceRange &&
+    (filters.priceRange[0] !== 120 || filters.priceRange[1] !== 300)
+  ) {
+    selectedFilters.push(
+      `Price: $${filters.priceRange[0]} - $${filters.priceRange[1]}`,
+    );
   }
 
   // Check year range
-  if (filters.yearRange && (filters.yearRange[0] !== 2000 || filters.yearRange[1] !== 2025)) {
-    selectedFilters.push(`Year: ${filters.yearRange[0]} - ${filters.yearRange[1]}`);
+  if (
+    filters.yearRange &&
+    (filters.yearRange[0] !== 2000 || filters.yearRange[1] !== 2025)
+  ) {
+    selectedFilters.push(
+      `Year: ${filters.yearRange[0]} - ${filters.yearRange[1]}`,
+    );
   }
 
   // Check conditions
   if (filters.conditions && filters.conditions.length > 0) {
-    selectedFilters.push(`Condition: ${filters.conditions.join(', ')}`);
+    selectedFilters.push(`Condition: ${filters.conditions.join(", ")}`);
   }
 
   // Check deal ratings
   if (filters.dealRatings && filters.dealRatings.length > 0) {
-    selectedFilters.push(`Deal Rating: ${filters.dealRatings.join(', ')}`);
+    selectedFilters.push(`Deal Rating: ${filters.dealRatings.join(", ")}`);
   }
 
   // Check search query
-  if (filters.searchQuery && filters.searchQuery.trim() !== '') {
+  if (filters.searchQuery && filters.searchQuery.trim() !== "") {
     selectedFilters.push(`Search: "${filters.searchQuery}"`);
   }
 
-  return selectedFilters.length > 0 ? selectedFilters.join(' | ') : 'No filter selected';
+  return selectedFilters.length > 0
+    ? selectedFilters.join(" | ")
+    : "No filter selected";
 };
 
 const Sidebar: React.FC<SidebarProps> = ({
   onHideFilters,
-  isVisible = true
+  isVisible = true,
 }) => {
   const { filters, updateFilters } = useFilterContext();
-  const [priceRange, setPriceRange] = useState<[number, number]>(filters.priceRange || [120, 300]);
-  const [yearRange, setYearRange] = useState<[number, number]>(filters.yearRange || [2000, 2025]);
+  const [priceRange, setPriceRange] = useState<[number, number]>(
+    filters.priceRange || [120, 300],
+  );
+  const [yearRange, setYearRange] = useState<[number, number]>(
+    filters.yearRange || [2000, 2025],
+  );
   const [expandedSections, setExpandedSections] = useState<{
     price: boolean;
     year: boolean;
@@ -58,7 +74,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     price: true,
     year: true,
     condition: true,
-    dealRating: true
+    dealRating: true,
   });
 
   useEffect(() => {
@@ -78,7 +94,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const handleConditionChange = (condition: string) => {
     const newConditions = filters.conditions?.includes(condition)
-      ? filters.conditions.filter(c => c !== condition)
+      ? filters.conditions.filter((c) => c !== condition)
       : [...(filters.conditions || []), condition];
 
     updateFilters({ conditions: newConditions });
@@ -86,16 +102,16 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const handleDealRatingChange = (rating: string) => {
     const newRatings = filters.dealRatings?.includes(rating)
-      ? filters.dealRatings.filter(r => r !== rating)
+      ? filters.dealRatings.filter((r) => r !== rating)
       : [...(filters.dealRatings || []), rating];
 
     updateFilters({ dealRatings: newRatings });
   };
 
   const toggleSection = (section: keyof typeof expandedSections) => {
-    setExpandedSections(prev => ({
+    setExpandedSections((prev) => ({
       ...prev,
-      [section]: !prev[section]
+      [section]: !prev[section],
     }));
   };
 
@@ -124,24 +140,20 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="mb-6">
         <div
           className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
-          onClick={() => toggleSection('price')}
+          onClick={() => toggleSection("price")}
         >
-          <h3 className="font-semibold text-black">
-            Price
-          </h3>
+          <h3 className="font-semibold text-black">Price</h3>
 
           <ChevronDownIcon
             size={20}
-            className={`text-gray-500 transition-transform ${expandedSections.price ? 'rotate-180' : ''}`}
+            className={`text-gray-500 transition-transform ${expandedSections.price ? "rotate-180" : ""}`}
           />
         </div>
 
         {expandedSections.price && (
           <div className="mt-[1rem] mb-[2rem]">
             <div className="mb-[1.625rem] flex items-center justify-between">
-              <span className="text-sm text-[#4B5563]">
-                Range
-              </span>
+              <span className="text-sm text-[#4B5563]">Range</span>
 
               <div className="text-sm text-[#1F2A37]">
                 ${priceRange[0]} - ${priceRange[1]}
@@ -155,7 +167,8 @@ const Sidebar: React.FC<SidebarProps> = ({
               step={10}
               value={priceRange}
               onChange={(val) => {
-                if (Array.isArray(val)) handlePriceChange(val as [number, number]);
+                if (Array.isArray(val))
+                  handlePriceChange(val as [number, number]);
               }}
               classNames={{
                 track: "bg-[#E5E7EB] h-1",
@@ -171,24 +184,20 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="mb-6">
         <div
           className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
-          onClick={() => toggleSection('year')}
+          onClick={() => toggleSection("year")}
         >
-          <h3 className="font-semibold text-black">
-            Year
-          </h3>
+          <h3 className="font-semibold text-black">Year</h3>
 
           <ChevronDownIcon
             size={20}
-            className={`text-gray-500 transition-transform ${expandedSections.year ? 'rotate-180' : ''}`}
+            className={`text-gray-500 transition-transform ${expandedSections.year ? "rotate-180" : ""}`}
           />
         </div>
 
         {expandedSections.year && (
           <div className="mt-[1rem] mb-[2rem]">
             <div className="mb-[1.625rem] flex items-center justify-between">
-              <span className="text-sm text-[#4B5563]">
-                Range
-              </span>
+              <span className="text-sm text-[#4B5563]">Range</span>
 
               <div className="text-sm text-[#1F2A37]">
                 {yearRange[0]} - {yearRange[1]}
@@ -202,7 +211,8 @@ const Sidebar: React.FC<SidebarProps> = ({
               step={1}
               value={yearRange}
               onChange={(val) => {
-                if (Array.isArray(val)) handleYearChange(val as [number, number]);
+                if (Array.isArray(val))
+                  handleYearChange(val as [number, number]);
               }}
               classNames={{
                 track: "bg-[#E5E7EB] h-1",
@@ -218,30 +228,28 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="mb-6">
         <div
           className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
-          onClick={() => toggleSection('condition')}
+          onClick={() => toggleSection("condition")}
         >
-          <h3 className="font-semibold text-black">
-            Condition
-          </h3>
+          <h3 className="font-semibold text-black">Condition</h3>
 
           <ChevronDownIcon
             size={20}
-            className={`text-gray-500 transition-transform ${expandedSections.condition ? 'rotate-180' : ''}`}
+            className={`text-gray-500 transition-transform ${expandedSections.condition ? "rotate-180" : ""}`}
           />
         </div>
 
         {expandedSections.condition && (
           <div className="mt-[1rem] mb-[2rem] flex flex-col gap-[0.75rem]">
-            {['Like New', 'Excellent', 'Good', 'Fair'].map((condition) => (
+            {["Like New", "Excellent", "Good", "Fair"].map((condition) => (
               <Checkbox
                 key={condition}
-                 color="success"
+                color="success"
                 isSelected={filters.conditions?.includes(condition) || false}
                 onValueChange={() => handleConditionChange(condition)}
                 classNames={{
                   base: "items-center",
                   wrapper: "bg-white",
-                  icon: "text-black"
+                  icon: "text-black",
                 }}
               >
                 <span className="ml-2 text-sm text-[#1F2A37]">{condition}</span>
@@ -255,21 +263,25 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className="mb-6">
         <div
           className="flex items-center justify-between cursor-pointer border-[#E5E7EB] border-b pb-[0.75rem]"
-          onClick={() => toggleSection('dealRating')}
+          onClick={() => toggleSection("dealRating")}
         >
-          <h3 className="font-semibold text-black">
-            Deal rating
-          </h3>
+          <h3 className="font-semibold text-black">Deal rating</h3>
 
           <ChevronDownIcon
             size={20}
-            className={`text-gray-500 transition-transform ${expandedSections.dealRating ? 'rotate-180' : ''}`}
+            className={`text-gray-500 transition-transform ${expandedSections.dealRating ? "rotate-180" : ""}`}
           />
         </div>
 
         {expandedSections.dealRating && (
           <div className="mt-[1rem] mb-[2rem] flex flex-col gap-[0.75rem]">
-            {['Great Deal', 'Good Deal', 'Fair Deal', 'High Priced', 'Uncertain'].map((rating) => (
+            {[
+              "Great Deal",
+              "Good Deal",
+              "Fair Deal",
+              "High Priced",
+              "Uncertain",
+            ].map((rating) => (
               <Checkbox
                 key={rating}
                 color="success"
@@ -278,12 +290,10 @@ const Sidebar: React.FC<SidebarProps> = ({
                 classNames={{
                   base: "items-center",
                   wrapper: "bg-white",
-                  icon: "text-black"
+                  icon: "text-black",
                 }}
               >
-                <span className="ml-2 text-sm text-[#1F2A37]">
-                  {rating}
-                </span>
+                <span className="ml-2 text-sm text-[#1F2A37]">{rating}</span>
               </Checkbox>
             ))}
             <div className="text-sm text-gray-500 mt-2">+ 234 more</div>

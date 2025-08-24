@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Connexion Watches",
-  description: "Discover luxury timepieces and premium watches at Connexion Watches. Explore our curated collection of elegant, high-quality watches for every occasion.",
+  description:
+    "Discover luxury timepieces and premium watches at Connexion Watches. Explore our curated collection of elegant, high-quality watches for every occasion.",
   navItems: [
     {
       label: "Home",

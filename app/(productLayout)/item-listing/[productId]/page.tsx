@@ -1,12 +1,24 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { IoArrowBack, IoHeart, IoBookmark, IoShare, IoStar, IoInformationCircle, IoChatbubble, IoShieldCheckmark, IoRocket, IoCard, IoCheckmarkCircle } from 'react-icons/io5';
-import ProductDetail from './components/productDetail';
-import ProductInfo from './components/productInfo';
-import RecommendedForYou from './components/RecommendedForYou';
-import TrustFeatures from './components/TrustFeatures';
+import React, { useState, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import {
+  IoArrowBack,
+  IoHeart,
+  IoBookmark,
+  IoShare,
+  IoStar,
+  IoInformationCircle,
+  IoChatbubble,
+  IoShieldCheckmark,
+  IoRocket,
+  IoCard,
+  IoCheckmarkCircle,
+} from "react-icons/io5";
+import ProductDetail from "./components/productDetail";
+import ProductInfo from "./components/productInfo";
+import RecommendedForYou from "./components/RecommendedForYou";
+import TrustFeatures from "./components/TrustFeatures";
 
 interface Product {
   id: number;
@@ -38,7 +50,7 @@ const ProductDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
   const [favorite, setFavorite] = useState(false);
-  const [activeTab, setActiveTab] = useState('product-info');
+  const [activeTab, setActiveTab] = useState("product-info");
 
   useEffect(() => {
     // Simulate API call to fetch product details
@@ -65,22 +77,23 @@ const ProductDetailPage = () => {
         marketDifference: "$1,200 below market",
         originalBox: true,
         originalPapers: true,
-        description: "This exceptional Patek Philippe Calatrava represents the pinnacle of luxury watchmaking. Crafted with precision and attention to detail, this timepiece features a sophisticated design that combines elegance with functionality.",
+        description:
+          "This exceptional Patek Philippe Calatrava represents the pinnacle of luxury watchmaking. Crafted with precision and attention to detail, this timepiece features a sophisticated design that combines elegance with functionality.",
         specifications: {
           "Case Material": "White Gold",
           "Case Size": "39mm",
-          "Movement": "Automatic",
+          Movement: "Automatic",
           "Water Resistance": "30m",
-          "Crystal": "Sapphire",
-          "Bracelet": "Leather Strap",
-          "Year": "2023"
+          Crystal: "Sapphire",
+          Bracelet: "Leather Strap",
+          Year: "2023",
         },
         images: [
           "/productDetails/product-overview-1.png",
           "/productDetails/product-overview-2.png",
           "/productDetails/product-overview-3.png",
-          "/productDetails/product-overview-4.png"
-        ]
+          "/productDetails/product-overview-4.png",
+        ],
       };
 
       setProduct(mockProduct);
@@ -105,12 +118,12 @@ const ProductDetailPage = () => {
       navigator.share({
         title: product?.brand,
         text: `Check out this ${product?.brand} - ${product?.price}`,
-        url: window.location.href
+        url: window.location.href,
       });
     } else {
       // Fallback for browsers that don't support Web Share API
       navigator.clipboard.writeText(window.location.href);
-      alert('Link copied to clipboard!');
+      alert("Link copied to clipboard!");
     }
   };
 
@@ -126,7 +139,9 @@ const ProductDetailPage = () => {
     return (
       <div className="bg-white min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Product Not Found
+          </h2>
           <button
             onClick={handleBack}
             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
@@ -139,19 +154,19 @@ const ProductDetailPage = () => {
   }
 
   return (
-    <div className='bg-[#EBF0F2]'>
+    <div className="bg-[#EBF0F2]">
       <div className="max-w-7xl mx-auto pb-[5rem]">
         <ProductDetail mockProduct={product} />
 
-        <div className='mt-[2.5rem]'>
+        <div className="mt-[2.5rem]">
           <ProductInfo mockProduct={product} />
         </div>
 
-        <div className='mt-[6.5rem]'>
+        <div className="mt-[6.5rem]">
           <RecommendedForYou />
         </div>
 
-        <div className='mt-[6.5rem]'>
+        <div className="mt-[6.5rem]">
           <TrustFeatures />
         </div>
       </div>

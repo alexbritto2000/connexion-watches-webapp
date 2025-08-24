@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
 // Define types for our filters
 interface Filters {
@@ -41,7 +41,7 @@ const FilterContext = createContext<FilterContextType | undefined>(undefined);
 export const useFilterContext = (): FilterContextType => {
   const context = useContext(FilterContext);
   if (!context) {
-    throw new Error('useFilterContext must be used within a FilterProvider');
+    throw new Error("useFilterContext must be used within a FilterProvider");
   }
   return context;
 };
@@ -56,8 +56,8 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     yearRange: [2000, 2025],
     conditions: [],
     dealRatings: [],
-    searchQuery: '',
-    sortBy: 'New Arrivals'
+    searchQuery: "",
+    sortBy: "New Arrivals",
   });
 
   const [sidebarVisible, setSidebarVisible] = useState<boolean>(true);
@@ -65,11 +65,11 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const updateFilters = (newFilters: Partial<Filters>) => {
-    setFilters(prev => ({ ...prev, ...newFilters }));
+    setFilters((prev) => ({ ...prev, ...newFilters }));
   };
 
   const toggleSidebar = () => {
-    setSidebarVisible(prev => !prev);
+    setSidebarVisible((prev) => !prev);
   };
 
   const clearFilters = () => {
@@ -78,8 +78,8 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
       yearRange: [2000, 2025],
       conditions: [],
       dealRatings: [],
-      searchQuery: '',
-      sortBy: 'New Arrivals'
+      searchQuery: "",
+      sortBy: "New Arrivals",
     });
   };
 
@@ -88,8 +88,8 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     try {
       // Here you would typically make an API call with the current filters
       // For now, we'll simulate a delay
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       // Mock API response - replace with actual API call
       const mockProducts: Product[] = [
         {
@@ -101,14 +101,14 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
           dealStatus: "Great Deal",
           dealColor: "bg-[#057A55]",
           seller: "LUX Store",
-          condition: "Like New"
+          condition: "Like New",
         },
         // Add more mock products as needed
       ];
-      
+
       setProducts(mockProducts);
     } catch (error) {
-      console.error('Error applying filters:', error);
+      console.error("Error applying filters:", error);
     } finally {
       setLoading(false);
     }
@@ -122,12 +122,10 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     clearFilters,
     applyFilters,
     products,
-    loading
+    loading,
   };
 
   return (
-    <FilterContext.Provider value={value}>
-      {children}
-    </FilterContext.Provider>
+    <FilterContext.Provider value={value}>{children}</FilterContext.Provider>
   );
 };

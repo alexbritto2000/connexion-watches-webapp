@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useFilterContext } from '../context/FilterContext';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useFilterContext } from "../context/FilterContext";
 
 // Define the props interface
 interface ProductGridProps {
@@ -27,16 +27,16 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
   const [bookmarks, setBookmarks] = useState<{ [key: number]: boolean }>({});
 
   const handleFavoriteClick = (watchId: number) => {
-    setFavorites(prev => ({
+    setFavorites((prev) => ({
       ...prev,
-      [watchId]: !prev[watchId]
+      [watchId]: !prev[watchId],
     }));
   };
 
   const handleBookmarkClick = (watchId: number) => {
-    setBookmarks(prev => ({
+    setBookmarks((prev) => ({
       ...prev,
-      [watchId]: !prev[watchId]
+      [watchId]: !prev[watchId],
     }));
   };
 
@@ -52,96 +52,99 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
   };
 
   // Sample products data - you can replace this with your actual data
-  const sampleProducts: Product[] = products.length > 0 ? products : [
-    {
-      id: 1,
-      image: "/watchLanding/recommend-1.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Great Deal",
-      dealColor: "bg-[#057A55]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 2,
-      image: "/watchLanding/recommend-2.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Good deal",
-      dealColor: "bg-[#31C48D]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 3,
-      image: "/watchLanding/recommend-3.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Fair deal",
-      dealColor: "bg-[#E3A008]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 4,
-      image: "/watchLanding/recommend-4.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "High priced",
-      dealColor: "bg-[#F05252]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 5,
-      image: "/watchLanding/recommend-5.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Uncertain",
-      dealColor: "bg-[#9CA3AF]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 6,
-      image: "/watchLanding/recommend-6.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Fair deal",
-      dealColor: "bg-[#E3A008]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 7,
-      image: "/watchLanding/recommend-1.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Great Deal",
-      dealColor: "bg-[#057A55]",
-      seller: "LUX Store",
-      condition: "Like New"
-    },
-    {
-      id: 8,
-      image: "/watchLanding/recommend-2.png",
-      model: "2023 Model",
-      brand: "Patek Philippe Nautilus",
-      price: "$12,999",
-      dealStatus: "Good deal",
-      dealColor: "bg-[#31C48D]",
-      seller: "LUX Store",
-      condition: "Like New"
-    }
-  ];
+  const sampleProducts: Product[] =
+    products.length > 0
+      ? products
+      : [
+          {
+            id: 1,
+            image: "/watchLanding/recommend-1.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Great Deal",
+            dealColor: "bg-[#057A55]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 2,
+            image: "/watchLanding/recommend-2.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Good deal",
+            dealColor: "bg-[#31C48D]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 3,
+            image: "/watchLanding/recommend-3.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Fair deal",
+            dealColor: "bg-[#E3A008]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 4,
+            image: "/watchLanding/recommend-4.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "High priced",
+            dealColor: "bg-[#F05252]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 5,
+            image: "/watchLanding/recommend-5.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Uncertain",
+            dealColor: "bg-[#9CA3AF]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 6,
+            image: "/watchLanding/recommend-6.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Fair deal",
+            dealColor: "bg-[#E3A008]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 7,
+            image: "/watchLanding/recommend-1.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Great Deal",
+            dealColor: "bg-[#057A55]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+          {
+            id: 8,
+            image: "/watchLanding/recommend-2.png",
+            model: "2023 Model",
+            brand: "Patek Philippe Nautilus",
+            price: "$12,999",
+            dealStatus: "Good deal",
+            dealColor: "bg-[#31C48D]",
+            seller: "LUX Store",
+            condition: "Like New",
+          },
+        ];
 
   return (
     <div className="flex-1">
@@ -173,7 +176,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
                   <img
                     src="/watchLanding/heart.svg"
                     alt="Heart"
-                    className={`w-4 h-4 transition-colors ${favorites[product.id] ? 'opacity-100' : 'opacity-60'}`}
+                    className={`w-4 h-4 transition-colors ${favorites[product.id] ? "opacity-100" : "opacity-60"}`}
                   />
                 </motion.div>
                 <motion.div
@@ -188,7 +191,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
                   <img
                     src="/watchLanding/bookmark.svg"
                     alt="Bookmark"
-                    className={`w-4 h-4 transition-colors ${bookmarks[product.id] ? 'opacity-100' : 'opacity-60'}`}
+                    className={`w-4 h-4 transition-colors ${bookmarks[product.id] ? "opacity-100" : "opacity-60"}`}
                   />
                 </motion.div>
               </div>
@@ -215,14 +218,16 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
                 {product.brand}
               </h3>
 
-              <div className='flex flex-row items-center gap-1'>
+              <div className="flex flex-row items-center gap-1">
                 <p className="text-black font-bold text-lg mb-3">
                   {product.price}
                 </p>
 
                 {/* Deal Status */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`px-2 py-[2px] rounded text-[0.75rem] text-white font-medium ${product.dealColor}`}>
+                  <span
+                    className={`px-2 py-[2px] rounded text-[0.75rem] text-white font-medium ${product.dealColor}`}
+                  >
                     {product.dealStatus}
                   </span>
                 </div>
@@ -232,12 +237,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onProductClick }) => {
               <div className="flex items-center gap-2">
                 <img src="/watchLanding/lux-store.png" alt="LUX Store" />
 
-                <div className='flex flex-row items-center gap-1 pb-[1px]'>
+                <div className="flex flex-row items-center gap-1 pb-[1px]">
                   <span className="text-[#2F3033] text-[0.75rem] font-semibold">
                     {product.seller}
                   </span>
 
-                  <div className='flex flex-row items-center'>
+                  <div className="flex flex-row items-center">
                     <img src="/review-left.svg" alt="Rating" />
                     <span className="text-[#2F3033] text-[0.75rem] font-semibold">
                       88

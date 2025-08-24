@@ -1,6 +1,6 @@
-import React from 'react';
-import Header from '@/components/headerComponents/Header';
-import Footer from '@/components/Footer';
+import React from "react";
+import Header from "@/components/headerComponents/Header";
+import Footer from "@/components/Footer";
 
 export default function WatchLandingLayout({
   children,
@@ -9,15 +9,15 @@ export default function WatchLandingLayout({
 }) {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header hideOptions={{
-        about: true,
-        howItWorks: true,
-        support: true
-      }} />
+      <Header
+        hideOptions={{
+          about: true,
+          howItWorks: true,
+          support: true,
+        }}
+      />
 
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       <Footer />
     </div>
