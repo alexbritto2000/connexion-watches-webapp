@@ -9,8 +9,8 @@ const Summary = () => {
             </div>
 
             <div className='flex flex-row gap-4 mt-[1.25rem]'>
-                <div className='w-[10.75rem] h-[10.75rem]'>
-                    <img src="/productDetails/product-overview-1.png" alt="product-overview" />
+                <div className='w-[10.75rem] h-[10.75rem] rounded-[6px]'>
+                    <img src="/productDetails/product-overview-1.png" alt="product-overview" className='rounded-[6px]' />
                 </div>
 
                 <div>

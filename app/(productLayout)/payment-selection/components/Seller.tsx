@@ -1,8 +1,11 @@
 import RatingStars from '@/components/RatingStars'
 import { Button } from '@heroui/button'
+import { useRouter } from "next/navigation";
 import React from 'react'
 
 const Seller = () => {
+    const router = useRouter();
+
     return (
         <div>
             <div className='text-[0.9rem] font-semibold mt-[1.25rem] mb-[0.6rem]'>
@@ -175,7 +178,7 @@ const Seller = () => {
                 </div>
 
                 <div className='w-full mt-[1.7rem]'>
-                    <Button className='py-[0.75rem] w-full rounded-[6px] bg-black text-white font-semibold text-[0.9rem]'>
+                    <Button className='py-[0.75rem] w-full rounded-[6px] bg-black text-white font-semibold text-[0.9rem]' onClick={() => router.push("/billing-details")}>
                         Pay Now
                     </Button>
                 </div>
