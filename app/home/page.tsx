@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import MarketplaceHero from "@/components/marketplace/MarketplaceHero";
 import ExploreMarketPlace from "@/components/marketplace/ExploreMarketPlace";
 import BecomeConnectionCertifier from "../watch-landing/buyComponents/BecomeConnectionCertifier";

@@ -84,7 +84,6 @@ export default function LoginPage() {
     values: any,
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void },
   ) => {
-    console.log("Login form submitted:", values);
     setSubmitting(false);
     // Add your navigation or authentication logic here
     if (typeof window !== "undefined") {
@@ -123,9 +122,9 @@ export default function LoginPage() {
 
             {!isClient ? (
               <div className="flex flex-col gap-4">
-                <div className="h-10 bg-gray-200 rounded-md animate-pulse"></div>
-                <div className="h-10 bg-gray-200 rounded-md animate-pulse"></div>
-                <div className="h-10 bg-gray-200 rounded-md animate-pulse"></div>
+                <div className="h-10 bg-gray-200 rounded-md animate-pulse" />
+                <div className="h-10 bg-gray-200 rounded-md animate-pulse" />
+                <div className="h-10 bg-gray-200 rounded-md animate-pulse" />
               </div>
             ) : (
               <Formik

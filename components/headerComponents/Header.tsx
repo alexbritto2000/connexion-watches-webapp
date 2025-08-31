@@ -10,6 +10,7 @@ const MarketTrendsPopover = dynamic(() => import("./MarketTrendsPopover"), {
 const LanguagePopover = dynamic(() => import("./LanguagePopover"), {
   ssr: false,
 });
+
 import { useRouter } from "next/navigation";
 
 interface HeaderProps {
@@ -45,13 +46,22 @@ const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
           <div className="max-w-7xl w-full flex justify-between items-center">
             <div className="flex gap-[1rem]">
               <div className="flex gap-4">
-                <div className="cursor-pointer" onClick={()=>router.push('/')}>
+                <button
+                  className="cursor-pointer border-none bg-transparent p-0"
+                  onClick={() => router.push('/')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      router.push('/');
+                    }
+                  }}
+                  aria-label="Go to home page"
+                >
                   <img
                     src="/logo.svg"
                     className="w-[6.25rem] cursor-pointer"
                     alt="Connexion Watches"
                   />
-                </div>
+                </button>
               </div>
 
               {!hideOptions.watch && (
