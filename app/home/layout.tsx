@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             <main>{children}</main>
 
-            <Footer showPoweredBy={true} />
+            <Footer showPoweredBy={false} />
         </div>
     );
 }
