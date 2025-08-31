@@ -16,8 +16,8 @@ module.exports = {
         "custom-hover": "0px 0px 10px 0px #F25C0580",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FFFFFF",
+        foreground: "#000000",
         "theme-color": "#F25C05",
         // "navigation-hover": "#FFF7F1",
         "active-font": "#000000",
@@ -54,7 +54,7 @@ module.exports = {
       // => @media (max-width: 479px) { ... }
     },
   },
-  darkMode: "class",
+
   plugins: [heroui()],
   rules: {
     "tailwindcss/no-custom-classname": "off",

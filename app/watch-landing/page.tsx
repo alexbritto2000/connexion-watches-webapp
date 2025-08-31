@@ -52,8 +52,13 @@ const SliderComponent: React.FC<SliderComponentProps> = ({
           label: "mb-6", // 24px gap below label
           track: "bg-[#E5E7EB] h-1", // light grey track with 4px height
           filler: "bg-black", // black filled part
-          thumb: "bg-black border-none w-3 h-3 rounded-full", // small black round thumb
         }}
+        renderThumb={(props) => (
+          <div
+            {...props}
+            className="w-3 h-3 bg-black rounded-full border-none cursor-pointer transition-all duration-200 hover:scale-110 data-[dragging=true]:w-4 data-[dragging=true]:h-4 data-[dragging=true]:shadow-lg data-[dragging=true]:shadow-black/20 mt-[2px]"
+          />
+        )}
       />
     </div>
   );

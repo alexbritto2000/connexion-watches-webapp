@@ -163,19 +163,27 @@ const Sidebar: React.FC<SidebarProps> = ({
             <Slider
               className="max-w-md"
               maxValue={1000}
-              minValue={0}
+              minValue={0}  
               step={10}
               value={priceRange}
               onChange={(val) => {
-                if (Array.isArray(val))
-                  handlePriceChange(val as [number, number]);
+                if (Array.isArray(val)) handlePriceChange(val as [number, number]);
               }}
               classNames={{
+                base: "w-full",
                 track: "bg-[#E5E7EB] h-1",
                 filler: "bg-black",
-                thumb: "bg-black border-none w-3 h-3 rounded-full",
+                label: "text-black font-medium",
+                value: "text-black font-medium",
               }}
+              renderThumb={(props) => (
+                <div
+                  {...props}
+                  className="w-3 h-3 bg-black rounded-full border-none cursor-pointer transition-all duration-200 hover:scale-110 data-[dragging=true]:w-4 data-[dragging=true]:h-4 data-[dragging=true]:shadow-lg data-[dragging=true]:shadow-black/20 mt-[2px]"
+                />
+              )}
             />
+
           </div>
         )}
       </div>
@@ -215,10 +223,18 @@ const Sidebar: React.FC<SidebarProps> = ({
                   handleYearChange(val as [number, number]);
               }}
               classNames={{
-                track: "bg-[#E5E7EB] h-1",
+                base: "w-full",
+                track: "bg-[#E7E7EB] h-1",
                 filler: "bg-black",
-                thumb: "bg-black border-none w-3 h-3 rounded-full",
+                label: "text-black font-medium",
+                value: "text-black font-medium",
               }}
+              renderThumb={(props) => (
+                <div
+                  {...props}
+                  className="w-3 h-3 bg-black rounded-full border-none cursor-pointer transition-all duration-200 hover:scale-110 data-[dragging=true]:w-4 data-[dragging=true]:h-4 data-[dragging=true]:shadow-lg data-[dragging=true]:shadow-black/20 mt-[2px]"
+                />
+              )}
             />
           </div>
         )}
