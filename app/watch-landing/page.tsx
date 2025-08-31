@@ -64,7 +64,7 @@ export default function WatchLanding() {
   const [value, setValue] = useState<number[]>([200, 800]);
 
   const tabs: string[] = ["Buy", "Sell"];
-
+  
   return (
     <div>
       <img src="watchLanding/banner-1.png" className="w-full" alt="Banner" />
