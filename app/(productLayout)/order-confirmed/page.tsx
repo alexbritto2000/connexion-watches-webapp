@@ -3,7 +3,7 @@ import { Button } from '@heroui/button'
 import React from 'react'
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
     const router = useRouter();
 
     return (
@@ -97,7 +97,7 @@ const page = () => {
 
                 <div className='flex w-[49%] bg-[#EBF5FF] rounded-[6px] px-[1rem] py-[1.5rem]'>
                     <div className='flex flex-row items-start gap-[1rem]'>
-                        <img src="/orderConfirmed/clarity_date-line.svg" alt="clarity_date-line" />
+                        <img src="/orderConfirmed/clarity_date-line.svg" alt="Date line icon" />
 
                         <div>
                             <div className='text-[#1A56DB] font-semibold text-[0.9rem]'>
@@ -220,4 +220,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
