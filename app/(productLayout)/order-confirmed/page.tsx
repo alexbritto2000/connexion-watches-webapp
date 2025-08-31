@@ -51,7 +51,7 @@ const Page = () => {
                     <div className='flex flex-row gap-[1rem]'>
                         <div className='flex flex-row gap-[1rem]'>
                             <div className='w-[6.875rem]'>
-                                <img src="/productDetails/product-overview-1.png" alt="product image" className='w-[6.875rem] h-[8.5rem] object-cover rounded-[6px] border-1 border-[#E5E7EB]' />
+                                <img src="/productDetails/product-overview-1.png" alt="Calatrava White Gold Watch" className='w-[6.875rem] h-[8.5rem] object-cover rounded-[6px] border-1 border-[#E5E7EB]' />
                             </div>
 
                             <div className='flex flex-1'>
