@@ -44,7 +44,7 @@ const Summary = () => {
                         </div>
                     </div>
 
-                    <Button className='w-[15.313rem] mt-[0.5rem] flex flex-row justify-center bg-white text-black rounded-[6px]'>
+                    <div className='w-[15.313rem] mt-[0.5rem] flex flex-row justify-center py-[0.75rem] bg-white text-black rounded-[6px]'>
                         <div className='flex flex-row gap-[0.5rem] items-center'>
                             <div>
                                 <img src="/buyingPage/carbon_delivery-parcel.svg" alt="delivery parcel" />
@@ -54,7 +54,7 @@ const Summary = () => {
                                 Delivery: 2/6/25-2/11/25
                             </div>
                         </div>
-                    </Button>
+                    </div>
 
                     <div className='w-[15.313rem] flex flex-row justify-between mt-2 font-medium text-[0.75rem]'>
                         <div>

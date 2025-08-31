@@ -15,6 +15,13 @@ const ShippingAndInsurance = ({
   insuranceMethod, 
   setInsuranceMethod 
 }: ShippingAndInsuranceProps) => {
+  const handleKeyDown = (event: React.KeyboardEvent, method: string, setter: (value: string) => void) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setter(method);
+    }
+  };
+
   return (
     <>
       <div className='text-[#333333] text-[0.9rem] font-semibold mb-[1.25rem] mt-[2rem]'>
@@ -25,11 +32,17 @@ const ShippingAndInsurance = ({
         <div className="flex flex-col gap-3">
           <RadioGroup value={shippingMethod} onValueChange={setShippingMethod}>
             {/* 1. DHL */}
-            <div className='border-b-1 border-[#E5E7EB] pb-[0.9rem] w-full cursor-pointer' onClick={() => setShippingMethod('DHL')}>
+            <div 
+              className='border-b-1 border-[#E5E7EB] pb-[0.9rem] w-full cursor-pointer' 
+              onClick={() => setShippingMethod('DHL')}
+              onKeyDown={(e) => handleKeyDown(e, 'DHL', setShippingMethod)}
+              role="button"
+              tabIndex={0}
+              aria-label="Select DHL shipping method"
+            >
               <div className='flex flex-row justify-between items-center text-[0.75rem] ml-[0.4rem] w-full'>
                 <div className='flex flex-row items-center gap-[10px]'>
-                  <Radio value="DHL">
-                  </Radio>
+                  <Radio value="DHL" />
 
                   <div className='w-[6rem]'>
                     Cheapest
@@ -51,11 +64,17 @@ const ShippingAndInsurance = ({
             </div>
 
             {/* 2. FEDEX */}
-            <div className='border-b-1 border-[#E5E7EB] pb-[0.9rem] pt-[0.5rem] w-full cursor-pointer' onClick={() => setShippingMethod('FEDEX')}>
+            <div 
+              className='border-b-1 border-[#E5E7EB] pb-[0.9rem] pt-[0.5rem] w-full cursor-pointer' 
+              onClick={() => setShippingMethod('FEDEX')}
+              onKeyDown={(e) => handleKeyDown(e, 'FEDEX', setShippingMethod)}
+              role="button"
+              tabIndex={0}
+              aria-label="Select FEDEX shipping method"
+            >
               <div className='flex flex-row justify-between items-center text-[0.75rem] ml-[0.4rem] w-full'>
                 <div className='flex flex-row items-center gap-[10px]'>
-                  <Radio value="FEDEX">
-                  </Radio>
+                  <Radio value="FEDEX" />
 
                   <div className='w-[6rem]'>
                     Express
@@ -77,11 +96,17 @@ const ShippingAndInsurance = ({
             </div>
 
             {/* 3. UPS */}
-            <div className='pt-[0.5rem] w-full cursor-pointer' onClick={() => setShippingMethod('UPS')}>
+            <div 
+              className='pt-[0.5rem] w-full cursor-pointer' 
+              onClick={() => setShippingMethod('UPS')}
+              onKeyDown={(e) => handleKeyDown(e, 'UPS', setShippingMethod)}
+              role="button"
+              tabIndex={0}
+              aria-label="Select UPS shipping method"
+            >
               <div className='flex flex-row justify-between items-center text-[0.75rem] ml-[0.4rem] w-full'>
                 <div className='flex flex-row items-center gap-[10px]'>
-                  <Radio value="UPS">
-                  </Radio>
+                  <Radio value="UPS" />
 
                   <div className='w-[6rem]'>
                     Super Fast
@@ -113,11 +138,17 @@ const ShippingAndInsurance = ({
         <div className="flex flex-col">
           <RadioGroup value={insuranceMethod} onValueChange={setInsuranceMethod}>
             {/* 1. CARRIER */}
-            <div className='border-b-1 border-[#E5E7EB] pb-[1rem] w-full cursor-pointer' onClick={() => setInsuranceMethod('CARRIER')}>
+            <div 
+              className='border-b-1 border-[#E5E7EB] pb-[1rem] w-full cursor-pointer' 
+              onClick={() => setInsuranceMethod('CARRIER')}
+              onKeyDown={(e) => handleKeyDown(e, 'CARRIER', setInsuranceMethod)}
+              role="button"
+              tabIndex={0}
+              aria-label="Select carrier insurance method"
+            >
               <div className='flex flex-row justify-between text-[0.75rem] ml-[0.4rem] w-full'>
                 <div className='flex flex-row items-start gap-[10px]'>
-                  <Radio value="CARRIER">
-                  </Radio>
+                  <Radio value="CARRIER" />
 
                   <div>
                     <div className='mb-[0.5rem]'>
@@ -147,11 +178,17 @@ const ShippingAndInsurance = ({
             </div>
 
             {/* 2. Premium Insurance */}
-            <div className='pb-[1rem] w-full cursor-pointer mt-[1rem]' onClick={() => setInsuranceMethod('PREMIUM')}>
+            <div 
+              className='pb-[1rem] w-full cursor-pointer mt-[1rem]' 
+              onClick={() => setInsuranceMethod('PREMIUM')}
+              onKeyDown={(e) => handleKeyDown(e, 'PREMIUM', setInsuranceMethod)}
+              role="button"
+              tabIndex={0}
+              aria-label="Select premium insurance method"
+            >
               <div className='flex flex-row justify-between text-[0.75rem] ml-[0.4rem] w-full'>
                 <div className='flex flex-row items-start gap-[10px]'>
-                  <Radio value="PREMIUM">
-                  </Radio>
+                  <Radio value="PREMIUM" />
 
                   <div>
                     <div className='mb-[0.5rem]'>

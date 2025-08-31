@@ -8,6 +8,13 @@ interface PaymentSectionProps {
 }
 
 const PaymentSection = ({ paymentType, setPaymentType }: PaymentSectionProps) => {
+  const handleKeyDown = (event: React.KeyboardEvent, value: string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setPaymentType(value);
+    }
+  };
+
   return (
     <>
       <div className='text-[#333333] text-[0.9rem] font-semibold mb-[1.25rem] mt-[2rem]'>
@@ -17,11 +24,17 @@ const PaymentSection = ({ paymentType, setPaymentType }: PaymentSectionProps) =>
       <div className="flex flex-col">
         <RadioGroup value={paymentType} onValueChange={setPaymentType}>
           {/* 1. local */}
-          <div className='border-b-1 border-[#E5E7EB] pb-[1rem] w-full cursor-pointer' onClick={() => setPaymentType('local')}>
+          <div
+            className='border-b-1 border-[#E5E7EB] pb-[1rem] w-full cursor-pointer'
+            onClick={() => setPaymentType('local')}
+            onKeyDown={(e) => handleKeyDown(e, 'local')}
+            role="button"
+            tabIndex={0}
+            aria-label="Select local wire transfer payment method"
+          >
             <div className='flex flex-row justify-between text-[0.75rem] ml-[0.4rem] w-full'>
               <div className='flex flex-row items-start gap-[10px]'>
-                <Radio value="local">
-                </Radio>
+                <Radio value="local" />
 
                 <div>
                   <div className='mb-[0.5rem]'>
@@ -41,11 +54,17 @@ const PaymentSection = ({ paymentType, setPaymentType }: PaymentSectionProps) =>
           </div>
 
           {/* 2. Credit card */}
-          <div className='border-b-1 border-[#E5E7EB] pb-[1rem] w-full cursor-pointer mt-[1rem]' onClick={() => setPaymentType('credit-card')}>
+          <div
+            className='border-b-1 border-[#E5E7EB] pb-[1rem] w-full cursor-pointer mt-[1rem]'
+            onClick={() => setPaymentType('credit-card')}
+            onKeyDown={(e) => handleKeyDown(e, 'credit-card')}
+            role="button"
+            tabIndex={0}
+            aria-label="Select credit card payment method"
+          >
             <div className='flex flex-row justify-between text-[0.75rem] ml-[0.4rem] w-full'>
               <div className='flex flex-row items-start gap-[10px]'>
-                <Radio value="credit-card">
-                </Radio>
+                <Radio value="credit-card" />
 
                 <div>
                   <div className='mb-[0.5rem]'>
@@ -63,11 +82,17 @@ const PaymentSection = ({ paymentType, setPaymentType }: PaymentSectionProps) =>
           </div>
 
           {/* 3. Financing */}
-          <div className='pb-[1rem] w-full cursor-pointer mt-[1rem]' onClick={() => setPaymentType('financing')}>
+          <div
+            className='pb-[1rem] w-full cursor-pointer mt-[1rem]'
+            onClick={() => setPaymentType('financing')}
+            onKeyDown={(e) => handleKeyDown(e, 'financing')}
+            role="button"
+            tabIndex={0}
+            aria-label="Select financing payment method"
+          >
             <div className='flex flex-row justify-between text-[0.75rem] ml-[0.4rem] w-full'>
               <div className='flex flex-row items-start gap-[10px]'>
-                <Radio value="financing">
-                </Radio>
+                <Radio value="financing" />
 
                 <div>
                   <div className='mb-[0.5rem]'>
