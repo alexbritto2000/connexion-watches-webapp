@@ -186,7 +186,7 @@ const ProductDetail = (product: any) => {
             <div className="flex flex-col gap-[0.5rem]">
               <Button 
                 className="w-full bg-black text-white rounded-[2px] mt-[2rem] text-[0.9rem] font-semibold"
-                onClick={() => router.push('/buy')}
+                onClick={() => router.push('/payment-selection')}
               >
                 Buy
               </Button>
