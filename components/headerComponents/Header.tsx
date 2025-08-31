@@ -10,6 +10,7 @@ const MarketTrendsPopover = dynamic(() => import("./MarketTrendsPopover"), {
 const LanguagePopover = dynamic(() => import("./LanguagePopover"), {
   ssr: false,
 });
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   hideOptions?: {
@@ -34,6 +35,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
+  const router = useRouter();
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-200 text-[#1C1F25]">
       <div className="w-full px-8 py-4 font-medium flex items-center justify-between relative z-10 md:px-6 sm:px-4">
@@ -42,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ hideOptions = {} }) => {
           <div className="max-w-7xl w-full flex justify-between items-center">
             <div className="flex gap-[1rem]">
               <div className="flex gap-4">
-                <div>
+                <div className="cursor-pointer" onClick={()=>router.push('/')}>
                   <img
                     src="/logo.svg"
                     className="w-[6.25rem] cursor-pointer"

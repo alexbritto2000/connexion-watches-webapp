@@ -46,7 +46,7 @@ const ThisWeeksHighlights = () => {
       <div>
         <div className="flex flex-row w-full p-0">
           <div className="w-[30%] relative">
-            <div className="overflow-hidden rounded-[8px] group">
+            <div className="overflow-hidden group">
               <img
                 src="watchLanding/limited-series.jpg"
                 alt="AUTUMN Collections"
@@ -60,7 +60,7 @@ const ThisWeeksHighlights = () => {
           </div>
 
           <div className="w-[70%] relative">
-            <div className="overflow-hidden rounded-[8px] group">
+            <div className="overflow-hidden group">
               <img
                 src="watchLanding/collections.jpg"
                 alt="Collections"
@@ -76,7 +76,7 @@ const ThisWeeksHighlights = () => {
 
         <div className="flex flex-row w-full p-0">
           <div className="w-[70%] relative">
-            <div className="overflow-hidden rounded-[8px] group">
+            <div className="overflow-hidden group">
               <img
                 src="watchLanding/autumn.jpg"
                 alt="AUTUMN Collections"
@@ -90,7 +90,7 @@ const ThisWeeksHighlights = () => {
           </div>
 
           <div className="w-[30%] relative">
-            <div className="overflow-hidden rounded-[8px] group">
+            <div className="overflow-hidden group">
               <img
                 src="watchLanding/exclusive.jpg"
                 alt="exclusive"

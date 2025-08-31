@@ -64,7 +64,7 @@ const SliderComponent: React.FC<SliderComponentProps> = ({
   );
 };
 
-export default function WatchLanding() {
+export default function Page() {
   const [activeTab, setActiveTab] = useState<string>("Buy");
   const [value, setValue] = useState<number[]>([200, 800]);
 
