@@ -11,7 +11,7 @@ export default function BiddingLayout({
 }) {
   return (
     <NavigationProvider>
-      <div className="flex min-h-screen max-w-7xl mx-auto">
+      <div className="flex min-h-screen max-w-7xl mx-auto px-4">
         {/* Sidebar */}
         <div className="pt-[1.5rem] pr-[2rem]">
           <SideBar />
