@@ -97,6 +97,7 @@ export default function BiddingPage() {
             <div className="flex rounded-lg cursor-pointer w-max bg-[#DBE0E2] text-[0.875rem] p-[2px]">
               {tabs.map((tab) => {
                 const isActive = activeTab === tab;
+
                 return (
                   <button
                     key={tab}

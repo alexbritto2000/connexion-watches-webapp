@@ -84,12 +84,13 @@ export default function Page() {
       <img src="watchLanding/banner-1.png" className="w-full" alt="Banner" />
 
       <div className="flex justify-between px-6 mt-[-2.5rem]">
-        <div className="w-[13.125rem]"></div>
+        <div className="w-[13.125rem]" />
 
         <LayoutGroup>
           <div className="flex border border-gray-200 shadow-sm rounded-lg cursor-pointer p-1 font-semibold w-max bg-white mt-4 h-[3.85rem]">
             {tabs.map((tab) => {
               const isActive = activeTab === tab;
+
               return (
                 <button
                   key={tab}

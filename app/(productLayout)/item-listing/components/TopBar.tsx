@@ -92,6 +92,7 @@ const TopBar: React.FC<TopBarProps> = ({
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

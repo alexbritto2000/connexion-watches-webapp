@@ -56,6 +56,15 @@ const NavItem = ({
                 className={`group cursor-pointer flex flex-row gap-4 items-center justify-between 
                 ${isActive ? 'text-[#111928]' : 'text-[#6B7280] hover:text-[#111928]'}`}
                 onClick={handleClick}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleClick();
+                    }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Navigate to ${label}`}
             >
                 <div className="flex gap-2 text-[0.82rem]">
                     {/* Icon wrapper */}

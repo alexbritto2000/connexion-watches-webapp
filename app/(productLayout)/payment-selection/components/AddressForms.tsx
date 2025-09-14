@@ -82,6 +82,7 @@ const AddressForms = ({ billingAddress, setBillingAddress }: AddressFormsProps) 
             }}
             renderValue={() => {
               const item = countries.find((c) => c.code === Array.from(selected)[0]);
+
               return item ? (
                 <div className="flex items-center gap-2">
                   <ReactCountryFlag

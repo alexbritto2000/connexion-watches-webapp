@@ -23,6 +23,7 @@ const ProductDetail = (product: any) => {
 
   // Check if images exist and have at least one image
   const images = product.mockProduct.images || [];
+
   if (images.length === 0) {
     return (
       <div className="text-[#6B7280] text-[0.875rem] p-4">

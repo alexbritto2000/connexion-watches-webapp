@@ -38,9 +38,9 @@ const ComingSoon: React.FC<ComingSoonProps> = ({
 
       {/* Decorative elements */}
       <div className="mt-8 flex space-x-2">
-        <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse"></div>
-        <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-        <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse" />
+        <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+        <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
       </div>
     </div>
   );
