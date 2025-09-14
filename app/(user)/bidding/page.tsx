@@ -132,7 +132,7 @@ export default function BiddingPage() {
                 {/* 1. Cards */}
                 <div className='flex flex-wrap gap-[10px]'>
                   {bidCards.map((bid) => (
-                    <div className='border border-white backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A] p-[1.5rem] w-[10.5rem] bg-white rounded-[0.5rem] pb-[1rem]'>
+                    <div key={bid.name} className='border border-white backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A] p-[1.5rem] w-[10.5rem] bg-white rounded-[0.5rem] pb-[1rem]'>
                       <div className='text-[0.75rem] text-[#111928]'>
                         {bid.name}
                       </div>
@@ -218,7 +218,14 @@ export default function BiddingPage() {
 
                       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer">
                         {searchTerm ? (
-                          <IoClose size={18} onClick={handleClear} />
+                          <button
+                            type="button"
+                            onClick={handleClear}
+                            className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                            aria-label="Clear search"
+                          >
+                            <IoClose size={18} />
+                          </button>
                         ) : (
                           <FiSearch size={18} />
                         )}
@@ -235,7 +242,7 @@ export default function BiddingPage() {
                     <div>
                       <div className='flex flex-row gap-[2rem]'>
                         <div className='w-[7rem] h-[8.8125rem] rounded-[0.375rem] shadow-[0px_1px_0px_0px_#0000001F]'>
-                          <img src={bid.imgUrl} className='w-full h-full object-cover' />
+                          <img src={bid.imgUrl} alt={bid.title} className='w-full h-full object-cover' />
                         </div>
 
                         <div className='flex flex-col gap-[2px] w-full'>
