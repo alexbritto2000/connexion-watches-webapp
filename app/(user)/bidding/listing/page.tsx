@@ -11,12 +11,12 @@ import {
   ModalBody,
   ModalFooter
 } from "@heroui/react";
+import { useRouter } from 'next/navigation'; // ✅ correct for App Router
 
 export default function ListingsPage() {
   const [activeTab, setActiveTab] = useState<string>("Buyer");
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
-  const tabs: string[] = ["Buyer", "Seller"];
+  const router = useRouter();
+  
   const bidCards = [
     { name: 'Active Listings', value: 10 },
     { name: 'Total Views', value: 1000 },
@@ -70,6 +70,10 @@ export default function ListingsPage() {
       imgUrl: '/bidding/listing/list-2.png',
     }
   ];
+
+  function handleClick(bidId: number) {
+    router.push(`/bid-detail/${bidId}`); // ✅ works now
+  }
 
   return (
     <>
@@ -236,7 +240,7 @@ export default function ListingsPage() {
               <div className='flex flex-col gap-4'>
                 {/* Card 1 */}
                 {yourBids.map((bid) => (
-                  <div className='w-full border border-white backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A,0px_1px_0px_0px_#0000001F] rounded-[0.5rem] p-[1.5rem] bg-white' key={bid.id}>
+                  <div className='w-full border border-white backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A,0px_1px_0px_0px_#0000001F] rounded-[0.5rem] p-[1.5rem] bg-white cursor-pointer' key={bid.id} onClick={() => handleClick(bid.id)}>
                     <div className='flex flex-row justify-between items-center'>
                       <div className='flex flex-row gap-[4rem]'>
                         <div>
