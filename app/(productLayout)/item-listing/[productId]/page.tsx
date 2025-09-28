@@ -1,20 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import {
-  IoArrowBack,
-  IoHeart,
-  IoBookmark,
-  IoShare,
-  IoStar,
-  IoInformationCircle,
-  IoChatbubble,
-  IoShieldCheckmark,
-  IoRocket,
-  IoCard,
-  IoCheckmarkCircle,
-} from "react-icons/io5";
 import ProductDetail from "./components/productDetail";
 import ProductInfo from "./components/productInfo";
 import RecommendedForYou from "./components/RecommendedForYou";

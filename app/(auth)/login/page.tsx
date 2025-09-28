@@ -86,10 +86,10 @@ export default function LoginPage() {
   ) => {
     setSubmitting(false);
     // Add your navigation or authentication logic here
-    if (typeof window !== "undefined") {
+    /* if (typeof window !== "undefined") {
       localStorage.setItem("role", "retailer");
-    }
-    router.push("/retailer"); // Redirect to dashboard after login
+    } */
+    router.push("/bidding"); // Redirect to dashboard after login
   };
 
   const [current, setCurrent] = useState(0);

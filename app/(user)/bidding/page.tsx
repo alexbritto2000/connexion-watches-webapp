@@ -371,7 +371,8 @@ export default function BiddingPage() {
             <>
               <ModalHeader className="flex flex-row justify-between items-center gap-1 !bg-[#FFFFFF59] py-[14px] px-[1.5rem]">
                 <div>Payment Method</div>
-                <div>
+
+                <div className='cursor-pointer' onClick={onClose}>
                   <img src="/close-icon.svg" alt="steps" />
                 </div>
               </ModalHeader>
