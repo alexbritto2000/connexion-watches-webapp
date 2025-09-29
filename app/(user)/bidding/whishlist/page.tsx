@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import ComingSoon from '../common/ComingSoon';
 import { Button } from '@heroui/button';
 import { Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Select, SelectItem, Switch, useDisclosure } from '@heroui/react';
 import { IoClose } from 'react-icons/io5';
@@ -125,7 +124,17 @@ export default function WishlistPage() {
           whishlistItems.map((item) => (
             <div
               key={item.id} // ✅ always add a key here
-              className="flex flex-row justify-between items-start mt-4 border border-gray-200 backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A,0px_1px_0px_0px_#0000001F] bg-white rounded-[6px] cursor-pointer" onClick={onOpen}
+              className="flex flex-row justify-between items-start mt-4 border border-gray-200 backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A,0px_1px_0px_0px_#0000001F] bg-white rounded-[6px] cursor-pointer" 
+              onClick={onOpen}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onOpen();
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label={`View wishlist item ${item.title}`}
             >
               <div className="flex flex-row gap-[1rem]">
                 <div className='pl-[0.5rem]'>
@@ -169,7 +178,7 @@ export default function WishlistPage() {
 
                     <div className="text-[0.875rem] flex flex-row items-center mt-[10px] gap-[0.5rem]">
                       <div>Original box</div>
-                      <div className="w-[5px] h-[5px] rounded-full bg-[#9CA3AF]"></div>
+                      <div className="w-[5px] h-[5px] rounded-full bg-[#9CA3AF]" />
                       <div>Original papers</div>
                     </div>
                   </div>
@@ -202,9 +211,13 @@ export default function WishlistPage() {
               <ModalHeader className="flex flex-row justify-between items-center gap-1 !bg-[#FFFFFF59] py-[14px] px-[1.5rem]">
                 <div>Create Wishlist</div>
 
-                <div className='cursor-pointer' onClick={onClose}>
-                  <img src="/close-icon.svg" alt="steps" />
-                </div>
+                <button 
+                  className='cursor-pointer' 
+                  onClick={onClose}
+                  aria-label="Close modal"
+                >
+                  <img src="/close-icon.svg" alt="close" />
+                </button>
               </ModalHeader>
 
               <ModalBody className='px-0 py-0 bg-gray-100'>
@@ -353,8 +366,7 @@ export default function WishlistPage() {
                         </div>
 
                         <div>
-                          <Switch isSelected={isSelected} onValueChange={setIsSelected}>
-                          </Switch>
+                          <Switch isSelected={isSelected} onValueChange={setIsSelected} />
                         </div>
                       </div>
                     </div>
@@ -382,8 +394,7 @@ export default function WishlistPage() {
                         </div>
 
                         <div>
-                          <Switch isSelected={isSelected} onValueChange={setIsSelected}>
-                          </Switch>
+                          <Switch isSelected={isSelected} onValueChange={setIsSelected} />
                         </div>
                       </div>
                     </div>

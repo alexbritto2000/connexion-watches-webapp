@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { GoChevronRight, GoClock } from "react-icons/go";
+import { GoClock } from "react-icons/go";
 
 const RecommendedForYou = () => {
   const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});

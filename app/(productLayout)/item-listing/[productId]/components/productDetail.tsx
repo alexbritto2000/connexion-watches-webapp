@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
-import { GoStar } from "react-icons/go";
-import { TiStarFullOutline } from "react-icons/ti";
-import { CiStar } from "react-icons/ci";
+// Unused star icons removed
 import RatingStars from "@/components/RatingStars";
 import { useRouter } from "next/navigation";
 
 const ProductDetail = (product: any) => {
-  console.log("product details", product);
+  // Product details component
   const [selectedImage, setSelectedImage] = useState(0);
   const router = useRouter();
 

@@ -61,7 +61,7 @@ const TopBar: React.FC<TopBarProps> = ({
   productCount = "2,356",
   currentRange = "1 - 12",
   sortBy = "New Arrivals",
-  onSearch,
+  onSearch: _onSearch,
   onShowFilters,
   sidebarVisible,
 }) => {

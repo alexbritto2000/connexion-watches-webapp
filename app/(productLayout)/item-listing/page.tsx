@@ -9,14 +9,14 @@ import CustomPagination from "../../../components/CustomPagination";
 
 const PageContent = () => {
   const router = useRouter();
-  const { filters, sidebarVisible, toggleSidebar, products, loading } =
+  const { filters, sidebarVisible, toggleSidebar, products: _products, loading } =
     useFilterContext();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12; // Assuming 12 items per page
 
   const handleSearch = (query: string) => {
     // This will be handled by the context
-    console.log("Search:", query);
+    // Search functionality can be implemented here
   };
 
   const handleHideFilters = () => {
@@ -28,7 +28,6 @@ const PageContent = () => {
   };
 
   const handleProductClick = (product: any) => {
-    console.log("Product clicked:", product);
     // Navigate to product detail page
     router.push(`/item-listing/${product.id}`);
   };
@@ -36,7 +35,6 @@ const PageContent = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     // You can also trigger API calls here to fetch data for the new page
-    console.log("Page changed to:", page);
   };
 
   return (

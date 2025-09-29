@@ -2,6 +2,7 @@
 import { Button, Tab, Tabs } from '@heroui/react';
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Overview from './components/Overview/Overview';
 import Market from './components/Market/Market';
 
@@ -23,8 +24,20 @@ const BidDetailPage = () => {
         <div className="flex flex-row gap-[2rem] min-h-screen max-w-7xl mx-auto pt-[1.5rem] px-4">
             {/* Left Sidebar */}
             <div className='w-[21.75rem] flex-shrink-0'>
-                <div className='flex flex-row items-center gap-[0.5rem] cursor-pointer h-[2.813rem]' onClick={handleBack}>
-                    <img src="/bidding/listing/back.svg" alt="back-icon" />
+                <div 
+                    className='flex flex-row items-center gap-[0.5rem] cursor-pointer h-[2.813rem]' 
+                    onClick={handleBack}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            handleBack();
+                        }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Go back to listings"
+                >
+                    <Image src="/bidding/listing/back.svg" alt="back-icon" width={16} height={16} />
                     <div>Back to Listings</div>
                 </div>
 
@@ -76,7 +89,7 @@ const BidDetailPage = () => {
                         </Button>
 
                         <Button className='bg-[#E5E7EB] h-[2rem] rounded-[6px] text-[0.75rem] text-[#374151] flex flex-row items-center justify-center gap-1 flex-1 font-normal'>
-                            <img src="/bidding/listing/black_carbon_rocket.svg" alt="black-carbon-rocket" />
+                            <Image src="/bidding/listing/black_carbon_rocket.svg" alt="black-carbon-rocket" width={16} height={16} />
                             Boost Visibility
                         </Button>
                     </div>
@@ -95,7 +108,7 @@ const BidDetailPage = () => {
                         </div>
 
                         <div className='border border-[#E5E7EB] rounded-[6px] py-[9.5px] px-[0.75rem] bg-transparent w-[2.75rem] h-[2.75rem] flex items-center justify-center cursor-pointer'>
-                            <img src="/bidding/listing/edit-gray-icon.svg" alt="edit-gray-icon" />
+                            <Image src="/bidding/listing/edit-gray-icon.svg" alt="edit-gray-icon" width={16} height={16} />
                         </div>
                     </div>
 
@@ -103,9 +116,12 @@ const BidDetailPage = () => {
                         <div className='mt-[1rem] grid grid-cols-2 gap-[0.5rem]'>
                             {watchImages.map((image, index) => (
                                 <div key={index} className='shadow-[0px_6px_4.9px_0px_rgba(0,0,0,0.04),0px_1px_0px_0px_rgba(0,0,0,0.12)] rounded-[6px]'>
-                                    <img
+                                    <Image
                                         src={image}
-                                        alt={`Watch image ${index + 1}`}
+                                        alt={`Watch ${index + 1}`}
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                             ))}

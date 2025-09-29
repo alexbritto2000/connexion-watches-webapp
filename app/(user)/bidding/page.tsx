@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { LayoutGroup, m, motion } from "framer-motion";
-import ComingSoon from './common/ComingSoon';
-import { Button, Chip, Input, Radio, RadioGroup, Select, SelectItem, Tab, Tabs, useDisclosure } from '@heroui/react';
+import { Button, Radio, RadioGroup, Select, SelectItem, Tab, Tabs, useDisclosure } from '@heroui/react';
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import {
@@ -212,7 +211,7 @@ export default function BiddingPage() {
                       <input
                         type="text"
                         value={searchTerm}
-                        onChange={(e) => (e.target.value)}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                         placeholder="Search..."
                         className="w-full border-b-2 border-[#cbcfd1] focus:outline-none focus:border-blue-500 pr-10 pl-4 py-3 h-11 bg-[#EBF0F2]"
                       />
@@ -372,9 +371,13 @@ export default function BiddingPage() {
               <ModalHeader className="flex flex-row justify-between items-center gap-1 !bg-[#FFFFFF59] py-[14px] px-[1.5rem]">
                 <div>Payment Method</div>
 
-                <div className='cursor-pointer' onClick={onClose}>
-                  <img src="/close-icon.svg" alt="steps" />
-                </div>
+                <button 
+                  className='cursor-pointer' 
+                  onClick={onClose}
+                  aria-label="Close modal"
+                >
+                  <img src="/close-icon.svg" alt="close" />
+                </button>
               </ModalHeader>
 
               <ModalBody className='px-0 py-0 w-auto max-w-fit'>

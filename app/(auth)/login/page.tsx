@@ -10,19 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const StarRating = ({ rating }: { rating: number }) => {
-  return (
-    <div className="flex gap-1">
-      {Array.from({ length: 5 }, (_, index) =>
-        index < rating ? (
-          <IoStar key={index} className="w-3" />
-        ) : (
-          <IoIosStarOutline key={index} className="w-3" />
-        ),
-      )}
-    </div>
-  );
-};
+// StarRating component removed as it's not used
 
 export default function LoginPage() {
   const router = useRouter();

@@ -1,20 +1,13 @@
 "use client";
 import React, { useState } from 'react';
-import { LayoutGroup, m, motion } from "framer-motion";
-import { Button, Chip, Input, Radio, RadioGroup, Select, SelectItem, Tab, Tabs, useDisclosure } from '@heroui/react';
+import { Button, Select, SelectItem, Tab, Tabs } from '@heroui/react';
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "@heroui/react";
+import Image from 'next/image';
 import { useRouter } from 'next/navigation'; // ✅ correct for App Router
 
 export default function ListingsPage() {
-  const [activeTab, setActiveTab] = useState<string>("Buyer");
+  const [activeTab] = useState<string>("Buyer");
   const router = useRouter();
   
   const bidCards = [
@@ -24,20 +17,12 @@ export default function ListingsPage() {
     { name: 'Sold this Month', value: 5 },
   ];
   const [activeBid, setActiveBid] = useState("listings");
-  const [paymentType, setPaymentType] = useState("local");
 
   const inputWrapperStyle = "border border-[#F0F0F0] focus-within:border-blue-500 rounded-md cursor-pointer";
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleClear = () => {
     setSearchTerm("");
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent, value: string) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      setPaymentType(value);
-    }
   };
 
   const yourBids = [
@@ -145,7 +130,7 @@ export default function ListingsPage() {
 
                   <Button className='flex flex-row items-center gap-[0.5rem] border-1 border-[#6B7280] rounded-[6px] px-[1.813rem] py-[0.938rem] bg-transparent'>
                     <div>
-                      <img src="/bidding/listing/add-icon.svg" alt="add-icon" />
+                      <Image src="/bidding/listing/add-icon.svg" alt="add-icon" width={16} height={16} />
                     </div>
 
                     <div className='text-[#4B5563] text-[0.875rem]'>
@@ -213,7 +198,7 @@ export default function ListingsPage() {
                       <input
                         type="text"
                         value={searchTerm}
-                        onChange={(e) => (e.target.value)}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                         placeholder="Search..."
                         className="w-full border-b-2 border-[#cbcfd1] focus:outline-none focus:border-blue-500 pr-10 pl-4 py-3 h-11 bg-[#EBF0F2]"
                       />
@@ -240,7 +225,20 @@ export default function ListingsPage() {
               <div className='flex flex-col gap-4'>
                 {/* Card 1 */}
                 {yourBids.map((bid) => (
-                  <div className='w-full border border-white backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A,0px_1px_0px_0px_#0000001F] rounded-[0.5rem] p-[1.5rem] bg-white cursor-pointer' key={bid.id} onClick={() => handleClick(bid.id)}>
+                  <div 
+                    className='w-full border border-white backdrop-blur-[30px] shadow-[0px_6px_4.9px_0px_#0000000A,0px_1px_0px_0px_#0000001F] rounded-[0.5rem] p-[1.5rem] bg-white cursor-pointer' 
+                    key={bid.id} 
+                    onClick={() => handleClick(bid.id)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            handleClick(bid.id);
+                        }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View listing ${bid.listing_number}`}
+                  >
                     <div className='flex flex-row justify-between items-center'>
                       <div className='flex flex-row gap-[4rem]'>
                         <div>
@@ -277,7 +275,7 @@ export default function ListingsPage() {
                       <div className='flex flex-row gap-[1.5rem]'>
                         <div className='flex flex-row gap-[0.25rem] items-center'>
                           <div>
-                            <img src="/bidding/listing/fav.svg" alt="fav" />
+                            <Image src="/bidding/listing/fav.svg" alt="fav" width={16} height={16} />
                           </div>
 
                           <div className='text-[0.75rem] text-[#111928]'>
@@ -287,7 +285,7 @@ export default function ListingsPage() {
 
                         <div className='flex flex-row gap-[0.25rem] items-center'>
                           <div>
-                            <img src="/bidding/listing/views.svg" alt="views" />
+                            <Image src="/bidding/listing/views.svg" alt="views" width={16} height={16} />
                           </div>
 
                           <div className='text-[0.75rem] text-[#111928]'>
@@ -310,7 +308,7 @@ export default function ListingsPage() {
                     <div className='flex flex-row justify-between items-end'>
                       <div className='flex flex-row gap-[2rem]'>
                         <div>
-                          <img src={bid.imgUrl} alt="list" />
+                            <Image src={bid.imgUrl} alt="list" width={200} height={200} className="w-full h-full object-cover" />
                         </div>
 
                         <div>
@@ -333,7 +331,7 @@ export default function ListingsPage() {
                               Original box
                             </div>
 
-                            <div className='bg-[#9CA3AF] h-[5px] w-[5px] rounded-full'></div>
+                            <div className='bg-[#9CA3AF] h-[5px] w-[5px] rounded-full' />
 
                             <div className='text-[0.875rem]'>
                               Original papers

@@ -10,52 +10,10 @@ interface SidebarProps {
   isVisible?: boolean;
 }
 
-// Helper function to generate selected filters text
-const getSelectedFiltersText = (filters: any) => {
-  const selectedFilters: string[] = [];
-
-  // Check price range
-  if (
-    filters.priceRange &&
-    (filters.priceRange[0] !== 120 || filters.priceRange[1] !== 300)
-  ) {
-    selectedFilters.push(
-      `Price: $${filters.priceRange[0]} - $${filters.priceRange[1]}`,
-    );
-  }
-
-  // Check year range
-  if (
-    filters.yearRange &&
-    (filters.yearRange[0] !== 2000 || filters.yearRange[1] !== 2025)
-  ) {
-    selectedFilters.push(
-      `Year: ${filters.yearRange[0]} - ${filters.yearRange[1]}`,
-    );
-  }
-
-  // Check conditions
-  if (filters.conditions && filters.conditions.length > 0) {
-    selectedFilters.push(`Condition: ${filters.conditions.join(", ")}`);
-  }
-
-  // Check deal ratings
-  if (filters.dealRatings && filters.dealRatings.length > 0) {
-    selectedFilters.push(`Deal Rating: ${filters.dealRatings.join(", ")}`);
-  }
-
-  // Check search query
-  if (filters.searchQuery && filters.searchQuery.trim() !== "") {
-    selectedFilters.push(`Search: "${filters.searchQuery}"`);
-  }
-
-  return selectedFilters.length > 0
-    ? selectedFilters.join(" | ")
-    : "No filter selected";
-};
+// Helper function removed as it's not used
 
 const Sidebar: React.FC<SidebarProps> = ({
-  onHideFilters,
+  onHideFilters: _onHideFilters,
   isVisible = true,
 }) => {
   const { filters, updateFilters } = useFilterContext();

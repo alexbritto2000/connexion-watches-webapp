@@ -110,7 +110,7 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
 
       setProducts(mockProducts);
     } catch (error) {
-      console.error("Error applying filters:", error);
+      // Error handling - could be logged to a service in production
     } finally {
       setLoading(false);
     }

@@ -62,7 +62,7 @@ const Overview = () => {
                     </div>
                 </div>
 
-                <div className='border-t-1 border-[#E5E7EB] my-[1rem]'></div>
+                <div className='border-t-1 border-[#E5E7EB] my-[1rem]' />
 
                 <div className='flex flex-row justify-between'>
                     <div className='flex flex-row gap-[1.25rem]'>
@@ -97,7 +97,7 @@ const Overview = () => {
                                         Original box
                                     </div>
 
-                                    <div className='w-[5px] h-[5px] rounded-full bg-[#9CA3AF]'></div>
+                                    <div className='w-[5px] h-[5px] rounded-full bg-[#9CA3AF]' />
 
                                     <div>
                                         Original papers
@@ -108,7 +108,7 @@ const Overview = () => {
                     </div>
                 </div>
 
-                <div className='border-t-1 border-[#E5E7EB] my-[1rem]'></div>
+                <div className='border-t-1 border-[#E5E7EB] my-[1rem]' />
 
                 <div className='py-[1rem]'>
                     <table className='w-full'>
@@ -192,7 +192,7 @@ const Overview = () => {
                     </table>
                 </div>
 
-                <div className='border-t-1 border-[#E5E7EB] my-[1rem]'></div>
+                <div className='border-t-1 border-[#E5E7EB] my-[1rem]' />
 
                 <div className='flex flex-col gap-[0.5rem]'>
                     <div className='font-semibold text-[0.875rem] text-[#333333]'>

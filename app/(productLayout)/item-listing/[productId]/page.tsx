@@ -35,9 +35,7 @@ const ProductDetailPage = () => {
 
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState(0);
   const [favorite, setFavorite] = useState(false);
-  const [activeTab, setActiveTab] = useState("product-info");
 
   useEffect(() => {
     // Simulate API call to fetch product details

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
-import { IoIosStarOutline } from "react-icons/io";
-import { CiStar } from "react-icons/ci";
 
 const ProductInfo = (product: any) => {
-  console.log("product details", product);
+  // Product info component
 
   const [activeTab, setActiveTab] = useState("product-info");
 
@@ -37,7 +35,7 @@ const ProductInfo = (product: any) => {
   ]
 
   const RatingStars = (data: any) => {
-    console.log("rate", data.rating);
+    // Rating stars component
 
     return (
       <div className="flex items-center gap-[0.25rem]">
