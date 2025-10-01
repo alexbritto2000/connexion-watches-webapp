@@ -308,7 +308,7 @@ export default function ListingsPage() {
                     <div className='flex flex-row justify-between items-end'>
                       <div className='flex flex-row gap-[2rem]'>
                         <div>
-                            <Image src={bid.imgUrl} alt="list" width={200} height={200} className="w-full h-full object-cover" />
+                            <Image src={bid.imgUrl} alt="list" width={200} height={200} className="w-[140px] h-[161px] object-cover" />
                         </div>
 
                         <div>

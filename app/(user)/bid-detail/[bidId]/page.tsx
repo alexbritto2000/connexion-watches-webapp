@@ -37,7 +37,7 @@ const BidDetailPage = () => {
                     tabIndex={0}
                     aria-label="Go back to listings"
                 >
-                    <Image src="/bidding/listing/back.svg" alt="back-icon" width={16} height={16} />
+                    <Image src="/bidding/listing/back.svg" alt="back-icon" width={16} height={16} className='h-[1rem]' />
                     <div>Back to Listings</div>
                 </div>
 
