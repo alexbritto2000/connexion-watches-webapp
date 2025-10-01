@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/button";
 
-const ProductInfo = (product: any) => {
+const ProductInfo = (_product: any) => {
   // Product info component
 
   const [activeTab, setActiveTab] = useState("product-info");

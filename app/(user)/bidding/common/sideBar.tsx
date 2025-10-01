@@ -7,7 +7,7 @@ import { useNavigation } from './NavigationProvider';
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
 
-const StarRating = ({ rating }: { rating: number }) => {
+const _StarRating = ({ rating }: { rating: number }) => {
     return (
         <div className="flex gap-1">
             {Array.from({ length: 5 }, (_, index) => (

@@ -94,11 +94,11 @@ const ProductDetailPage = () => {
     router.back();
   };
 
-  const handleFavorite = () => {
+  const _handleFavorite = () => {
     setFavorite(!favorite);
   };
 
-  const handleShare = () => {
+  const _handleShare = () => {
     if (navigator.share) {
       navigator.share({
         title: product?.brand,

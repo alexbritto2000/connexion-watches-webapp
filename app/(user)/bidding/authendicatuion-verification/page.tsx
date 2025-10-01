@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import ComingSoon from '../common/ComingSoon';
 import { Button, Tab, Tabs } from '@heroui/react';
 import { IoClose } from 'react-icons/io5';
 import { FiSearch } from 'react-icons/fi';
@@ -130,7 +129,7 @@ export default function AuthenticityVerificationPage() {
             >
               <div className='flex flex-row gap-[2rem]'>
                 <div className='rounded-[0.375rem] shadow-[0px_1px_0px_0px_#0000001F] w-fit'>
-                  <img src={bid.imgUrl} className='h-[8.813rem] w-[7rem] object-cover' />
+                  <img src={bid.imgUrl} alt={`${bid.title} - ${bid.model}`} className='h-[8.813rem] w-[7rem] object-cover' />
                 </div>
 
                 <div className='flex flex-col items-start justify-between'>
@@ -155,7 +154,7 @@ export default function AuthenticityVerificationPage() {
                   <Button className='border-1 border-[#E5E7EB] rounded-[6px] px-[1rem] py-[6.5px] bg-[#F3F4F6] h-[2rem]'>
                     <div className='flex flex-row gap-[6px] items-center'>
                       <div>
-                        <img src="/bidding/authenticity-verification/watch-icon.svg" />
+                        <img src="/bidding/authenticity-verification/watch-icon.svg" alt="Watch verification icon" />
                       </div>
 
                       <div className='text-[#4B5563] text-[0.875rem]'>
@@ -180,7 +179,7 @@ export default function AuthenticityVerificationPage() {
                 <Button className='border-1 border-[#E5E7EB] rounded-[6px] px-[1rem] py-[6.5px] bg-[#F3F4F6] h-[2rem]'>
                   <div className='flex flex-row gap-[6px] items-center'>
                     <div>
-                      <img src="/bidding/authenticity-verification/report-icon.svg" />
+                      <img src="/bidding/authenticity-verification/report-icon.svg" alt="Report icon" />
                     </div>
 
                     <div className='text-[#4B5563] text-[0.875rem]'>

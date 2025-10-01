@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { HiOutlineSearch } from "react-icons/hi";
 
 const MarketplaceHero = () => {
-  const marketplaces = [
+  const _marketplaces = [
     {
       id: 1,
       name: "Watches",

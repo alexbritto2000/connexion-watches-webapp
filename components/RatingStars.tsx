@@ -3,8 +3,6 @@ import { CiStar } from "react-icons/ci";
 import { TiStarFullOutline } from "react-icons/ti";
 
 const RatingStars = (data: any) => {
-  console.log("rate", data.rating);
-
   return (
     <div className="flex items-center">
       {[...Array(5)].map((_, index) =>

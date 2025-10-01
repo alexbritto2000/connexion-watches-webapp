@@ -2,7 +2,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import LoadingSpinner from './LoadingSpinner';
 
 interface NavigationContextType {
   isLoading: boolean;

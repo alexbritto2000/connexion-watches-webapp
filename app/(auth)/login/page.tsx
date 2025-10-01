@@ -4,8 +4,6 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Button, Input, Checkbox } from "@heroui/react";
 
-import { IoStar } from "react-icons/io5";
-import { IoIosStarOutline } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Link from "next/link";

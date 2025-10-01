@@ -14,7 +14,7 @@ const PageContent = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12; // Assuming 12 items per page
 
-  const handleSearch = (query: string) => {
+  const handleSearch = (_query: string) => {
     // This will be handled by the context
     // Search functionality can be implemented here
   };
