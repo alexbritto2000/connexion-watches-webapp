@@ -4,14 +4,21 @@ import React, { useState } from 'react';
 import { Button, Tab, Tabs } from '@heroui/react';
 import { IoClose } from 'react-icons/io5';
 import { FiSearch } from 'react-icons/fi';
+import { useRouter } from 'next/navigation'; // ✅ correct for App Router
 
 export default function AuthenticityVerificationPage() {
   const [activeBid, setActiveBid] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
 
   const handleClear = () => {
     setSearchTerm("");
   };
+
+  function handleClick(productId: number) {
+    console.log("Clicked product ID:", productId);
+    router.push(`/authenticity-verification/${productId}`); // ✅ works now
+  }
 
   const yourBids = [
     {
@@ -123,6 +130,7 @@ export default function AuthenticityVerificationPage() {
                   //handleClick(bid.id);
                 }
               }}
+              onClick={() => handleClick(bid.id)}
               role="button"
               tabIndex={0}
               aria-label={`View listing ${bid.listing_number}`}

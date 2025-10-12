@@ -1,0 +1,103 @@
+{
+  "criteria": [
+    {
+      "id": "watch_functionality",
+      "title": "Does the watches work",
+      "description": "Wind the crown, the watch should start moving",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "serial_number",
+      "title": "Serial Number",
+      "description": "Check for 7-8 digits, verify against manufacturer records or databases.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "model_reference",
+      "title": "Model and Reference Number",
+      "description": "Confirm matches official specs; watch for incorrect digits, common in fakes.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "brand_logos",
+      "title": "Brand Logos and Engravings",
+      "description": "Inspect for accuracy, quality; look for misspellings or poor engraving.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "case_back",
+      "title": "Case Back",
+      "description": "Check for specific engravings, hallmarks; ensure secure attachment.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "crown_buttons",
+      "title": "Crown and Push Buttons",
+      "description": "Verify smooth operation, correct branding; feel for quality.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "dial_hands",
+      "title": "Dial and Hands",
+      "description": "Inspect print quality, hand design; check luminescence.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "description": "Have a professional inspect; verify caliber matches model.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "weight_feel",
+      "title": "Weight and Feel",
+      "description": "Ensure hefty, substantial feel; compare to known authentic models.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "luminescence",
+      "title": "Luminescence",
+      "description": "Check if hands and markers glow correctly under light.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    },
+    {
+      "id": "box_papers",
+      "title": "Box and Papers",
+      "description": "Verify original box, warranty card, certificate match watch details.",
+      "options": [
+        { "key": "passed", "value": "Passed" },
+        { "key": "fails", "value": "Fails" }
+      ]
+    }
+  ]
+}
